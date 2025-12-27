@@ -283,7 +283,7 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--tex
 <div class="hero-content">
     <div class="hero-badge">100% Free • No Signup Required</div>
     <h1>Learn crypto without <em>losing your shirt</em></h1>
-    <p class="hero-sub">Master blockchain fundamentals, trading mechanics, and scam detection through hands-on simulations. Built by a trader who lost over $6000 learning the hard way.</p>
+    <p class="hero-sub">Master blockchain fundamentals, trading mechanics, and scam detection through hands-on simulations. Built by a trader who lost $1,700 learning the hard way.</p>
     <div class="hero-buttons">
         <button class="btn btn-primary" onclick="nav('learn')">Start Learning →</button>
         <button class="btn btn-secondary" onclick="nav('simulator')">Try Rug Simulator</button>
@@ -344,8 +344,8 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--tex
 <div class="footer-inner">
     <div class="footer-logo">© 2025 BagAcademy — Free Forever</div>
     <div class="footer-links">
-        <a href="#"></a>
-        <a href="#"></a>
+        <a href="#">Twitter</a>
+        <a href="#">GitHub</a>
     </div>
 </div>
 </div>
@@ -410,19 +410,19 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--tex
 <div class="page" id="page-about">
 <div class="about-hero">
 <div class="container">
-    <h1>I lost <em>$6000</em> so you don't have to</h1>
+    <h1>I lost <em>$1,700</em> so you don't have to</h1>
 </div>
 </div>
 <div class="container">
 <div class="about-grid">
     <div class="about-story">
         <p>I spent a year trading meme coins on Solana. Degen hours. Telegram alpha groups. The whole thing.</p>
-        <p>The result? <strong>Negative $6000 PnL.</strong></p>
+        <p>The result? <strong>Negative $1,700 PnL.</strong></p>
         <p>But here's the thing—I didn't walk away empty-handed. I learned to read charts. I learned how liquidity pools actually work. I figured out how scammers operate and why most "community" projects are just slow rugs.</p>
         <p>I learned to code well enough to build trading tools. I understood <span class="hl">why 95% of traders lose</span> and what separates the 5% who don't.</p>
-        <p>That $6000 wasn't lost. <strong>It was tuition.</strong></p>
+        <p>That $1,700 wasn't lost. <strong>It was tuition.</strong></p>
         <p>BagAcademy exists because I wish someone had taught me this stuff before I learned it the expensive way. No course fees. No Discord upsells. No "premium signals." Just everything I know, organized and free.</p>
-        <p>If you finish this and decide crypto isn't for you—that's a win. You found out for free instead of finding out at $6000.</p>
+        <p>If you finish this and decide crypto isn't for you—that's a win. You found out for free instead of finding out at $1,700.</p>
     </div>
     <div class="about-stats">
         <div class="about-stat"><div class="about-stat-val red">-$1,700</div><div class="about-stat-label">My tuition to the market</div></div>
@@ -481,12 +481,12 @@ let currentLesson = 0;
 
 // TOKENS
 const tokens = [
-    { id: 'bonk', name: 'Diamond', ticker: 'DMND', icon: '💎', color: '#3498db', price: 0.00042, chg: 847, tags: ['new','risk'], rug: 'hard', rugDelay: 8000 },
-    { id: 'pepe', name: 'Pepe2.0', ticker: 'PEPE2', icon: '🐸', color: '#f39c12', price: 0.0089, chg: 2341, tags: ['new'], rug: 'slow', rugDelay: 15000 },
-    { id: 'wojak', name: 'WojakFinance', ticker: 'WOJ', icon: '🤓', color: '#9b59b6', price: 0.0234, chg: 156, tags: ['liq'], rug: 'honey', rugDelay: 5000 },
-    { id: 'chad', name: 'GigaChadInu', ticker: 'GIGA', icon: '💪', color: '#e74c3c', price: 0.00034, chg: 5420, tags: ['new','risk'], rug: 'hard', rugDelay: 6000 },
-    { id: 'frog', name: 'Gold', ticker: 'GOLD', icon: '🏆', color: '#2ecc71', price: 0.00067, chg: 0.432, tags: [], rug: 'slow', rugDelay: 20000 },
-    { id: 'cat', name: 'CatCoinAI', ticker: 'CCAT', icon: '🐱', color: '#e91e63', price: 0.0089, chg: 0.89, tags: ['liq'], rug: 'honey', rugDelay: 4000 },
+    { id: 'bonk', name: 'SafeMoon2.0', ticker: 'SAFM', icon: '🌙', color: '#3498db', price: 0.00042, chg: 847, tags: ['new','risk'], rug: 'hard', rugDelay: 8000 },
+    { id: 'pepe', name: 'ElonDoge420', ticker: 'EDOGE', icon: '🐕', color: '#f39c12', price: 0.0000089, chg: 2341, tags: ['new'], rug: 'slow', rugDelay: 15000 },
+    { id: 'wojak', name: 'WojakFinance', ticker: 'WOJ', icon: '😢', color: '#9b59b6', price: 0.0234, chg: 156, tags: ['liq'], rug: 'honey', rugDelay: 5000 },
+    { id: 'chad', name: 'GigaChadInu', ticker: 'GIGA', icon: '💪', color: '#e74c3c', price: 0.00000034, chg: 5420, tags: ['new','risk'], rug: 'hard', rugDelay: 6000 },
+    { id: 'frog', name: 'PepeFork', ticker: 'PFORK', icon: '🐸', color: '#2ecc71', price: 0.000067, chg: 432, tags: [], rug: 'slow', rugDelay: 20000 },
+    { id: 'cat', name: 'CatCoinAI', ticker: 'CCAT', icon: '🐱', color: '#e91e63', price: 0.0089, chg: 89, tags: ['liq'], rug: 'honey', rugDelay: 4000 },
 ];
 
 const rugTypes = {
@@ -855,6 +855,194 @@ function resetWallet() {
 // Init
 document.addEventListener('DOMContentLoaded', () => {
     buildModuleList();
+});
+</script>
+
+</body>
+</html>
+        // Check if time for rug
+        if (tickCount >= totalTicks) {
+            clearInterval(chartInterval);
+            executeRug(id);
+        }
+    }, 200);
+}
+
+function updateChart() {
+const canvas = document.getElementById(‘priceChart’);
+const ctx = canvas.getContext(‘2d’);
+const rect = canvas.parentElement.getBoundingClientRect();
+
+```
+canvas.width = rect.width * 2;
+canvas.height = rect.height * 2;
+ctx.scale(2, 2);
+
+const w = rect.width;
+const h = rect.height;
+
+ctx.fillStyle = '#08080a';
+ctx.fillRect(0, 0, w, h);
+
+ctx.strokeStyle = '#252530';
+ctx.lineWidth = 0.5;
+for (let i = 0; i < 5; i++) {
+    const y = (h / 5) * i;
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.lineTo(w, y);
+    ctx.stroke();
+}
+
+if (priceHistory.length < 2) return;
+
+const min = Math.min(...priceHistory) * 0.95;
+const max = Math.max(...priceHistory) * 1.05;
+const range = max - min || 1;
+
+ctx.beginPath();
+ctx.strokeStyle = priceMultiplier >= 1 ? '#00d68f' : '#ff4757';
+ctx.lineWidth = 2;
+
+priceHistory.forEach((p, i) => {
+    const x = (i / (priceHistory.length - 1)) * w;
+    const y = h - ((p - min) / range) * h;
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+});
+ctx.stroke();
+
+ctx.lineTo(w, h);
+ctx.lineTo(0, h);
+ctx.closePath();
+ctx.fillStyle = priceMultiplier >= 1 ? 'rgba(0,214,143,0.1)' : 'rgba(255,71,87,0.1)';
+ctx.fill();
+
+const currentPrice = activeToken.price * priceMultiplier;
+const priceEl = document.getElementById('chartPrice');
+priceEl.textContent = '$' + (currentPrice < 0.0001 ? currentPrice.toExponential(2) : currentPrice.toFixed(6));
+priceEl.className = 'chart-price ' + (priceMultiplier >= 1 ? 'up' : 'down');
+```
+
+}
+
+function executeRug(id) {
+const h = wallet.holdings[id];
+if (!h) return;
+
+```
+const rugInfo = rugTypes[h.token.rug];
+document.getElementById('chartStatus').textContent = '💀 RUG PULL DETECTED';
+
+let crashTicks = 0;
+const crashInterval = setInterval(() => {
+    crashTicks++;
+    priceMultiplier *= 0.7;
+    priceHistory.push(priceMultiplier);
+    if (priceHistory.length > 60) priceHistory.shift();
+    
+    h.currentPrice = h.token.price * priceMultiplier;
+    updateWalletUI();
+    updateChart();
+    
+    if (crashTicks >= 8) {
+        clearInterval(crashInterval);
+        
+        const lostAmt = h.cost * rugInfo.loss;
+        const remainAmt = h.cost - lostAmt;
+        
+        h.currentPrice = h.token.price * (1 - rugInfo.loss);
+        h.rugged = true;
+        
+        document.getElementById('rugPrice').textContent = `-${Math.round(rugInfo.loss * 100)}%`;
+        document.getElementById('rugType').textContent = rugInfo.name;
+        document.getElementById('rugExplain').textContent = rugInfo.desc;
+        document.getElementById('rugInvested').textContent = `$${h.cost.toFixed(2)}`;
+        document.getElementById('rugLost').textContent = `$${lostAmt.toFixed(2)}`;
+        document.getElementById('rugRemain').textContent = `$${remainAmt.toFixed(2)}`;
+        document.getElementById('rugScreen').classList.add('show');
+        
+        updateWalletUI();
+    }
+}, 100);
+```
+
+}
+
+function closeRug() {
+document.getElementById(‘rugScreen’).classList.remove(‘show’);
+document.getElementById(‘liveChart’).classList.remove(‘show’);
+activeToken = null;
+priceHistory = [];
+}
+
+function closeModal() {
+document.getElementById(‘tradeModal’).classList.remove(‘show’);
+}
+
+function updateWalletUI() {
+let totalValue = wallet.cash;
+let totalPnl = 0;
+
+```
+const holdingsEl = document.getElementById('holdingsList');
+let html = `
+    <div class="holding">
+        <div class="holding-left">
+            <div class="holding-icon" style="background:#1a1a2e">💵</div>
+            <div><div class="holding-name">USD</div><div class="holding-amt">Cash</div></div>
+        </div>
+        <div class="holding-right">
+            <div class="holding-val">${'$'}${wallet.cash.toFixed(2)}</div>
+        </div>
+    </div>
+`;
+
+for (const [id, h] of Object.entries(wallet.holdings)) {
+    const currentPrice = h.currentPrice || h.token.price;
+    const value = h.amount * currentPrice;
+    const pnl = value - h.cost;
+    const pnlPct = (pnl / h.cost * 100);
+    
+    totalValue += value;
+    totalPnl += pnl;
+    
+    html += `
+        <div class="holding">
+            <div class="holding-left">
+                <div class="holding-icon" style="background:${h.token.color}22">${h.token.icon}</div>
+                <div><div class="holding-name">${h.token.ticker}</div><div class="holding-amt">${h.amount.toLocaleString()}</div></div>
+            </div>
+            <div class="holding-right">
+                <div class="holding-val">${'$'}${value.toFixed(2)}</div>
+                <div class="holding-chg ${pnl >= 0 ? 'pos' : 'neg'}">${pnl >= 0 ? '+' : ''}${pnlPct.toFixed(1)}%</div>
+            </div>
+        </div>
+    `;
+}
+
+holdingsEl.innerHTML = html;
+document.getElementById('totalValue').textContent = '$' + totalValue.toFixed(2);
+
+const pnlPct = ((totalValue - wallet.startValue) / wallet.startValue * 100);
+const pnlEl = document.getElementById('totalPnl');
+pnlEl.textContent = (totalPnl >= 0 ? '+' : '') + '$' + totalPnl.toFixed(2) + ' (' + (pnlPct >= 0 ? '+' : '') + pnlPct.toFixed(1) + '%)';
+pnlEl.className = 'balance-pnl ' + (totalPnl >= 0 ? 'pos' : 'neg');
+```
+
+}
+
+function resetWallet() {
+if (chartInterval) clearInterval(chartInterval);
+wallet = { cash: 500, holdings: {}, startValue: 500 };
+document.getElementById(‘liveChart’).classList.remove(‘show’);
+activeToken = null;
+priceHistory = [];
+updateWalletUI();
+}
+
+document.addEventListener(‘DOMContentLoaded’, () => {
+buildModuleList();
 });
 </script>
 
