@@ -2,248 +2,237 @@
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BagAcademy — Free Crypto Education</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BagAcademy — Free Crypto Education</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
 :root{--bg:#08080a;--bg2:#0e0e12;--bg3:#151519;--surface:#1a1a1f;--border:#252530;--border2:#35354a;--text:#f0f0f5;--text2:#9090a0;--text3:#606070;--accent:#beff00;--red:#ff4757;--green:#00d68f;--orange:#ffa502}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 ::selection{background:var(--accent);color:var(--bg)}
-
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(8,8,10,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(–border)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(8,8,10,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-inner{max-width:1300px;margin:0 auto;padding:0 2rem;height:70px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:0.875rem;cursor:pointer}
-.logo-icon{width:44px;height:44px;background:var(–accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:‘IBM Plex Mono’,monospace;font-weight:600;font-size:1rem;color:var(–bg);position:relative;overflow:hidden}
-.logo-icon::after{content:’’;position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent,rgba(255,255,255,0.3),transparent);transform:rotate(45deg);animation:shine 3s infinite}
+.logo-icon{width:44px;height:44px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:1rem;color:var(--bg);position:relative;overflow:hidden}
+.logo-icon::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent,rgba(255,255,255,0.3),transparent);transform:rotate(45deg);animation:shine 3s infinite}
 @keyframes shine{0%{transform:translateX(-100%) rotate(45deg)}100%{transform:translateX(100%) rotate(45deg)}}
 .logo-text{font-weight:700;font-size:1.25rem;letter-spacing:-0.02em}
-.logo-text span{color:var(–accent)}
-.nav-links{display:flex;gap:0.5rem;background:var(–bg2);border:1px solid var(–border);border-radius:50px;padding:4px}
-.nav-link{color:var(–text2);font-size:0.875rem;font-weight:500;padding:0.625rem 1.25rem;border-radius:50px;cursor:pointer;transition:0.2s}
-.nav-link:hover{color:var(–text)}
-.nav-link.active{background:var(–surface);color:var(–text)}
-.nav-cta{background:var(–accent);color:var(–bg);padding:0.75rem 1.5rem;border-radius:50px;font-weight:600;font-size:0.875rem;border:none;cursor:pointer;transition:0.2s}
+.logo-text span{color:var(--accent)}
+.nav-links{display:flex;gap:0.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:50px;padding:4px}
+.nav-link{color:var(--text2);font-size:0.875rem;font-weight:500;padding:0.625rem 1.25rem;border-radius:50px;cursor:pointer;transition:0.2s}
+.nav-link:hover{color:var(--text)}
+.nav-link.active{background:var(--surface);color:var(--text)}
+.nav-cta{background:var(--accent);color:var(--bg);padding:0.75rem 1.5rem;border-radius:50px;font-weight:600;font-size:0.875rem;border:none;cursor:pointer;transition:0.2s}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(190,255,0,0.25)}
-
 .page{display:none;min-height:100vh;padding-top:70px}
 .page.active{display:block}
 .container{max-width:1200px;margin:0 auto;padding:0 2rem}
-
-/* HERO */
 .hero{min-height:calc(100vh - 70px);display:flex;align-items:center;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(190,255,0,0.07),transparent)}
 .hero-content{position:relative;z-index:1;max-width:720px;padding:4rem 0}
-.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(0,214,143,0.1);border:1px solid var(–green);color:var(–green);padding:0.5rem 1rem;border-radius:50px;font-family:‘IBM Plex Mono’,monospace;font-size:0.75rem;margin-bottom:2rem}
-.hero-badge::before{content:’’;width:8px;height:8px;background:var(–green);border-radius:50%;animation:pulse 2s infinite}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(0,214,143,0.1);border:1px solid var(--green);color:var(--green);padding:0.5rem 1rem;border-radius:50px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;margin-bottom:2rem}
+.hero-badge::before{content:'';width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
-.hero h1{font-family:‘Newsreader’,serif;font-size:clamp(3rem,8vw,5.5rem);font-weight:400;line-height:1.05;margin-bottom:1.5rem}
-.hero h1 em{font-style:italic;color:var(–accent)}
-.hero-sub{font-size:1.2rem;color:var(–text2);margin-bottom:2.5rem;max-width:520px}
+.hero h1{font-family:'Newsreader',serif;font-size:clamp(3rem,8vw,5.5rem);font-weight:400;line-height:1.05;margin-bottom:1.5rem}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:1.2rem;color:var(--text2);margin-bottom:2.5rem;max-width:520px}
 .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:4rem}
 .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:1rem 2rem;font-size:1rem;font-weight:600;border-radius:12px;border:none;cursor:pointer;font-family:inherit;transition:0.2s}
-.btn-primary{background:var(–accent);color:var(–bg)}
+.btn-primary{background:var(--accent);color:var(--bg)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(190,255,0,0.3)}
-.btn-secondary{background:var(–surface);color:var(–text);border:1px solid var(–border)}
-.btn-secondary:hover{border-color:var(–border2)}
+.btn-secondary{background:var(--surface);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--border2)}
 .hero-stats{display:flex;gap:3rem}
-.hero-stat-value{font-family:‘IBM Plex Mono’,monospace;font-size:2rem;font-weight:600;color:var(–accent)}
-.hero-stat-label{font-size:0.875rem;color:var(–text3)}
-
-/* FEATURES */
+.hero-stat-value{font-family:'IBM Plex Mono',monospace;font-size:2rem;font-weight:600;color:var(--accent)}
+.hero-stat-label{font-size:0.875rem;color:var(--text3)}
 .section{padding:6rem 0}
 .section-header{margin-bottom:3rem}
-.section-label{font-family:‘IBM Plex Mono’,monospace;font-size:0.75rem;color:var(–accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem}
-.section-title{font-family:‘Newsreader’,serif;font-size:clamp(2rem,5vw,3rem);font-weight:400}
-.section-sub{color:var(–text2);font-size:1.1rem;margin-top:0.5rem;max-width:500px}
+.section-label{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem}
+.section-title{font-family:'Newsreader',serif;font-size:clamp(2rem,5vw,3rem);font-weight:400}
+.section-sub{color:var(--text2);font-size:1.1rem;margin-top:0.5rem;max-width:500px}
 .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
-.feature-card{background:var(–surface);border:1px solid var(–border);border-radius:16px;padding:2rem;transition:0.3s}
-.feature-card:hover{border-color:var(–accent);transform:translateY(-4px)}
-.feature-icon{width:50px;height:50px;background:var(–bg2);border:1px solid var(–border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.25rem}
+.feature-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:0.3s}
+.feature-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.feature-icon{width:50px;height:50px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.25rem}
 .feature-card h3{font-size:1.125rem;font-weight:600;margin-bottom:0.5rem}
-.feature-card p{font-size:0.9375rem;color:var(–text2);line-height:1.7}
-
-/* MODULES */
+.feature-card p{font-size:0.9375rem;color:var(--text2);line-height:1.7}
 .module-list{display:flex;flex-direction:column;gap:0.75rem}
-.module-card{background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1.5rem;cursor:pointer;transition:0.2s}
-.module-card:hover{border-color:var(–accent);background:var(–bg3)}
-.module-num{font-family:‘IBM Plex Mono’,monospace;font-size:0.875rem;color:var(–accent);width:32px}
+.module-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1.5rem;cursor:pointer;transition:0.2s}
+.module-card:hover{border-color:var(--accent);background:var(--bg3)}
+.module-num{font-family:'IBM Plex Mono',monospace;font-size:0.875rem;color:var(--accent);width:32px}
 .module-info{flex:1}
 .module-info h3{font-size:1.0625rem;font-weight:600;margin-bottom:0.125rem}
-.module-info p{font-size:0.8125rem;color:var(–text2)}
-.module-arrow{color:var(–text3);transition:0.2s}
-.module-card:hover .module-arrow{color:var(–accent);transform:translateX(4px)}
-
-/* ABOUT */
+.module-info p{font-size:0.8125rem;color:var(--text2)}
+.module-arrow{color:var(--text3);transition:0.2s}
+.module-card:hover .module-arrow{color:var(--accent);transform:translateX(4px)}
 .about-hero{padding:8rem 0 4rem;text-align:center}
-.about-hero h1{font-family:‘Newsreader’,serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:400;max-width:800px;margin:0 auto 1.5rem}
-.about-hero h1 em{font-style:italic;color:var(–accent)}
+.about-hero h1{font-family:'Newsreader',serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:400;max-width:800px;margin:0 auto 1.5rem}
+.about-hero h1 em{font-style:italic;color:var(--accent)}
 .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:4rem;padding:2rem 0 6rem}
-.about-story{font-size:1.1rem;color:var(–text2);line-height:1.9}
+.about-story{font-size:1.1rem;color:var(--text2);line-height:1.9}
 .about-story p{margin-bottom:1.5rem}
-.about-story strong{color:var(–text)}
-.about-story .hl{background:linear-gradient(120deg,var(–accent),var(–accent));background-size:100% 0.25em;background-position:0 90%;background-repeat:no-repeat;color:var(–text)}
+.about-story strong{color:var(--text)}
+.about-story .hl{background:linear-gradient(120deg,var(--accent),var(--accent));background-size:100% 0.25em;background-position:0 90%;background-repeat:no-repeat;color:var(--text)}
 .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.about-stat{background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:1.5rem}
-.about-stat-val{font-family:‘IBM Plex Mono’,monospace;font-size:2rem;font-weight:600}
-.about-stat-val.red{color:var(–red)}
-.about-stat-val.green{color:var(–green)}
-.about-stat-label{font-size:0.8125rem;color:var(–text3);margin-top:0.25rem}
-
-/* SIMULATOR */
+.about-stat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem}
+.about-stat-val{font-family:'IBM Plex Mono',monospace;font-size:2rem;font-weight:600}
+.about-stat-val.red{color:var(--red)}
+.about-stat-val.green{color:var(--green)}
+.about-stat-label{font-size:0.8125rem;color:var(--text3);margin-top:0.25rem}
 .sim-page{padding:2rem 0 4rem}
 .sim-header{text-align:center;margin-bottom:2rem}
-.sim-header h1{font-family:‘Newsreader’,serif;font-size:2rem;margin-bottom:0.5rem}
-.sim-header p{color:var(–text2)}
+.sim-header h1{font-family:'Newsreader',serif;font-size:2rem;margin-bottom:0.5rem}
+.sim-header p{color:var(--text2)}
 .sim-layout{display:grid;grid-template-columns:300px 1fr;gap:1.5rem}
-.wallet-panel{background:var(–surface);border:1px solid var(–border);border-radius:16px;padding:1.5rem;height:fit-content;position:sticky;top:90px}
-.wallet-title{font-family:‘IBM Plex Mono’,monospace;font-size:0.7rem;color:var(–text3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center}
-.wallet-reset{background:none;border:none;color:var(–text3);font-size:0.7rem;cursor:pointer;text-decoration:underline}
-.wallet-balance{text-align:center;padding:1.5rem 0;border-bottom:1px solid var(–border);margin-bottom:1rem}
-.balance-label{font-size:0.75rem;color:var(–text3)}
-.balance-value{font-family:‘IBM Plex Mono’,monospace;font-size:2.25rem;font-weight:600}
-.balance-pnl{font-family:‘IBM Plex Mono’,monospace;font-size:0.875rem;margin-top:0.25rem}
-.balance-pnl.pos{color:var(–green)}
-.balance-pnl.neg{color:var(–red)}
-.holdings-title{font-family:‘IBM Plex Mono’,monospace;font-size:0.7rem;color:var(–text3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.75rem}
-.holding{display:flex;justify-content:space-between;align-items:center;padding:0.75rem;background:var(–bg2);border-radius:10px;margin-bottom:0.5rem}
+.wallet-panel{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.5rem;height:fit-content;position:sticky;top:90px}
+.wallet-title{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center}
+.wallet-reset{background:none;border:none;color:var(--text3);font-size:0.7rem;cursor:pointer;text-decoration:underline}
+.wallet-balance{text-align:center;padding:1.5rem 0;border-bottom:1px solid var(--border);margin-bottom:1rem}
+.balance-label{font-size:0.75rem;color:var(--text3)}
+.balance-value{font-family:'IBM Plex Mono',monospace;font-size:2.25rem;font-weight:600}
+.balance-pnl{font-family:'IBM Plex Mono',monospace;font-size:0.875rem;margin-top:0.25rem}
+.balance-pnl.pos{color:var(--green)}
+.balance-pnl.neg{color:var(--red)}
+.holdings-title{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.75rem}
+.holding{display:flex;justify-content:space-between;align-items:center;padding:0.75rem;background:var(--bg2);border-radius:10px;margin-bottom:0.5rem}
 .holding-left{display:flex;align-items:center;gap:0.625rem}
 .holding-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.875rem}
 .holding-name{font-size:0.8125rem;font-weight:500}
-.holding-amt{font-family:‘IBM Plex Mono’,monospace;font-size:0.7rem;color:var(–text3)}
+.holding-amt{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text3)}
 .holding-right{text-align:right}
-.holding-val{font-family:‘IBM Plex Mono’,monospace;font-size:0.8125rem}
-.holding-chg{font-family:‘IBM Plex Mono’,monospace;font-size:0.7rem}
-.holding-chg.pos{color:var(–green)}
-.holding-chg.neg{color:var(–red)}
-
-.trading-area{background:var(–surface);border:1px solid var(–border);border-radius:16px;overflow:hidden}
-.trading-tabs{display:flex;border-bottom:1px solid var(–border)}
-.trading-tab{flex:1;padding:1rem;text-align:center;font-size:0.875rem;font-weight:500;color:var(–text2);background:none;border:none;cursor:pointer}
-.trading-tab.active{color:var(–text);background:var(–bg3);border-bottom:2px solid var(–accent)}
+.holding-val{font-family:'IBM Plex Mono',monospace;font-size:0.8125rem}
+.holding-chg{font-family:'IBM Plex Mono',monospace;font-size:0.7rem}
+.holding-chg.pos{color:var(--green)}
+.holding-chg.neg{color:var(--red)}
+.trading-area{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.trading-tabs{display:flex;border-bottom:1px solid var(--border)}
+.trading-tab{flex:1;padding:1rem;text-align:center;font-size:0.875rem;font-weight:500;color:var(--text2);background:none;border:none;cursor:pointer}
+.trading-tab.active{color:var(--text);background:var(--bg3);border-bottom:2px solid var(--accent)}
 .trading-content{padding:1.5rem}
 .token-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
-.token-card{background:var(–bg2);border:1px solid var(–border);border-radius:12px;padding:1.25rem;cursor:pointer;transition:0.2s}
-.token-card:hover{border-color:var(–accent)}
-.token-card.danger{border-color:var(–red)}
-.token-card.warning{border-color:var(–orange)}
+.token-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.25rem;cursor:pointer;transition:0.2s}
+.token-card:hover{border-color:var(--accent)}
+.token-card.danger{border-color:var(--red)}
+.token-card.warning{border-color:var(--orange)}
 .token-top{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem}
 .token-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.125rem}
 .token-name{font-weight:600;font-size:0.9375rem}
-.token-ticker{font-family:‘IBM Plex Mono’,monospace;font-size:0.7rem;color:var(–text3)}
-.token-price{font-family:‘IBM Plex Mono’,monospace;font-size:1.125rem;font-weight:600}
-.token-chg{font-family:‘IBM Plex Mono’,monospace;font-size:0.8125rem}
-.token-chg.pos{color:var(–green)}
-.token-chg.neg{color:var(–red)}
+.token-ticker{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text3)}
+.token-price{font-family:'IBM Plex Mono',monospace;font-size:1.125rem;font-weight:600}
+.token-chg{font-family:'IBM Plex Mono',monospace;font-size:0.8125rem}
+.token-chg.pos{color:var(--green)}
 .token-tags{display:flex;gap:0.375rem;margin-top:0.75rem;flex-wrap:wrap}
-.token-tag{font-family:‘IBM Plex Mono’,monospace;font-size:0.625rem;padding:0.25rem 0.5rem;border-radius:4px}
-.token-tag.new{background:rgba(0,214,143,0.15);color:var(–green)}
-.token-tag.risk{background:rgba(255,71,87,0.15);color:var(–red)}
-.token-tag.liq{background:rgba(190,255,0,0.15);color:var(–accent)}
-
-/* TRADE MODAL */
+.token-tag{font-family:'IBM Plex Mono',monospace;font-size:0.625rem;padding:0.25rem 0.5rem;border-radius:4px}
+.token-tag.new{background:rgba(0,214,143,0.15);color:var(--green)}
+.token-tag.risk{background:rgba(255,71,87,0.15);color:var(--red)}
+.token-tag.liq{background:rgba(190,255,0,0.15);color:var(--accent)}
+.live-chart{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1rem;margin-bottom:1.5rem;display:none}
+.live-chart.show{display:block}
+.chart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem}
+.chart-token{display:flex;align-items:center;gap:0.5rem}
+.chart-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.875rem}
+.chart-name{font-weight:600;font-size:0.875rem}
+.chart-price{font-family:'IBM Plex Mono',monospace;font-size:1.25rem;font-weight:600}
+.chart-price.up{color:var(--green)}
+.chart-price.down{color:var(--red)}
+.chart-canvas{width:100%;height:180px}
+.chart-canvas canvas{width:100%;height:100%}
+.chart-status{text-align:center;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--text3);margin-top:0.5rem}
 .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:2000;padding:1rem}
 .modal-bg.show{display:flex}
-.modal{background:var(–surface);border:1px solid var(–border);border-radius:20px;width:100%;max-width:420px;max-height:90vh;overflow-y:auto}
-.modal-head{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 1.5rem;border-bottom:1px solid var(–border)}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:20px;width:100%;max-width:420px;max-height:90vh;overflow-y:auto}
+.modal-head{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 1.5rem;border-bottom:1px solid var(--border)}
 .modal-title{font-weight:600}
-.modal-close{width:32px;height:32px;border-radius:50%;background:var(–bg2);border:1px solid var(–border);color:var(–text2);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.modal-close{width:32px;height:32px;border-radius:50%;background:var(--bg2);border:1px solid var(--border);color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.25rem}
 .modal-body{padding:1.5rem}
-.trade-info{display:flex;align-items:center;gap:1rem;padding:1rem;background:var(–bg2);border-radius:12px;margin-bottom:1.5rem}
+.trade-info{display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--bg2);border-radius:12px;margin-bottom:1.5rem}
 .trade-info-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
 .trade-info h4{font-size:1rem;font-weight:600}
-.trade-info-price{font-family:‘IBM Plex Mono’,monospace;font-size:0.875rem;color:var(–text2)}
+.trade-info-price{font-family:'IBM Plex Mono',monospace;font-size:0.875rem;color:var(--text2)}
 .trade-input-wrap{margin-bottom:1rem}
-.trade-input-label{display:flex;justify-content:space-between;font-size:0.75rem;color:var(–text2);margin-bottom:0.5rem}
-.trade-input-box{display:flex;background:var(–bg2);border:1px solid var(–border);border-radius:10px;overflow:hidden}
-.trade-input-box:focus-within{border-color:var(–accent)}
-.trade-input{flex:1;background:none;border:none;padding:0.875rem 1rem;font-family:‘IBM Plex Mono’,monospace;font-size:1.125rem;color:var(–text);outline:none}
-.trade-input-suffix{display:flex;align-items:center;padding:0 1rem;background:var(–bg);border-left:1px solid var(–border);font-size:0.8125rem;color:var(–text2)}
+.trade-input-label{display:flex;justify-content:space-between;font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem}
+.trade-input-box{display:flex;background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.trade-input-box:focus-within{border-color:var(--accent)}
+.trade-input{flex:1;background:none;border:none;padding:0.875rem 1rem;font-family:'IBM Plex Mono',monospace;font-size:1.125rem;color:var(--text);outline:none}
+.trade-input-suffix{display:flex;align-items:center;padding:0 1rem;background:var(--bg);border-left:1px solid var(--border);font-size:0.8125rem;color:var(--text2)}
 .trade-presets{display:flex;gap:0.5rem;margin-bottom:1.25rem}
-.trade-preset{flex:1;padding:0.5rem;background:var(–bg2);border:1px solid var(–border);border-radius:8px;font-size:0.75rem;color:var(–text2);cursor:pointer}
-.trade-preset:hover{border-color:var(–accent);color:var(–text)}
-.trade-summary{background:var(–bg2);border-radius:10px;padding:1rem;margin-bottom:1.25rem}
+.trade-preset{flex:1;padding:0.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:8px;font-size:0.75rem;color:var(--text2);cursor:pointer}
+.trade-preset:hover{border-color:var(--accent);color:var(--text)}
+.trade-summary{background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1.25rem}
 .trade-row{display:flex;justify-content:space-between;padding:0.5rem 0;font-size:0.875rem}
-.trade-row:not(:last-child){border-bottom:1px solid var(–border)}
-.trade-row-label{color:var(–text2)}
-.trade-row-val{font-family:‘IBM Plex Mono’,monospace}
-.trade-warn{display:flex;gap:0.75rem;padding:1rem;background:rgba(255,71,87,0.1);border:1px solid var(–red);border-radius:10px;margin-bottom:1.25rem;font-size:0.8125rem;color:var(–red)}
+.trade-row:not(:last-child){border-bottom:1px solid var(--border)}
+.trade-row-label{color:var(--text2)}
+.trade-row-val{font-family:'IBM Plex Mono',monospace}
+.trade-warn{display:flex;gap:0.75rem;padding:1rem;background:rgba(255,71,87,0.1);border:1px solid var(--red);border-radius:10px;margin-bottom:1.25rem;font-size:0.8125rem;color:var(--red)}
 .trade-btn{width:100%;padding:1rem;font-size:1rem;font-weight:600;border-radius:10px;border:none;cursor:pointer;font-family:inherit}
-.trade-btn.buy{background:var(–green);color:#000}
-.trade-btn.sell{background:var(–red);color:#fff}
-
-/* RUG ANIMATION */
-.rug-screen{position:fixed;inset:0;background:var(–bg);display:none;align-items:center;justify-content:center;flex-direction:column;z-index:3000;text-align:center;padding:2rem}
+.trade-btn.buy{background:var(--green);color:#000}
+.rug-screen{position:fixed;inset:0;background:#08080a;display:none;align-items:center;justify-content:center;flex-direction:column;z-index:3000;text-align:center;padding:2rem}
 .rug-screen.show{display:flex}
-.rug-price{font-family:‘IBM Plex Mono’,monospace;font-size:clamp(3rem,10vw,5rem);font-weight:700;color:var(–red)}
-.rug-label{font-size:1.5rem;margin:1rem 0;font-family:‘Newsreader’,serif}
-.rug-type{color:var(–orange);font-family:‘IBM Plex Mono’,monospace;font-size:0.875rem;margin-bottom:1.5rem}
-.rug-explain{color:var(–text2);max-width:500px;line-height:1.8;margin-bottom:2rem}
+.rug-price{font-family:'IBM Plex Mono',monospace;font-size:clamp(3rem,10vw,5rem);font-weight:700;color:#ff4757}
+.rug-label{font-size:1.5rem;margin:1rem 0;font-family:'Newsreader',serif;color:#f0f0f5}
+.rug-type{color:#ffa502;font-family:'IBM Plex Mono',monospace;font-size:0.875rem;margin-bottom:1.5rem}
+.rug-explain{color:#9090a0;max-width:500px;line-height:1.8;margin-bottom:2rem}
 .rug-stats{display:flex;gap:2rem;margin-bottom:2rem}
-.rug-stat-val{font-family:‘IBM Plex Mono’,monospace;font-size:1.5rem;font-weight:600}
-.rug-stat-label{font-size:0.75rem;color:var(–text3)}
-
-/* LESSON */
+.rug-stat-val{font-family:'IBM Plex Mono',monospace;font-size:1.5rem;font-weight:600;color:#f0f0f5}
+.rug-stat-val.red{color:#ff4757}
+.rug-stat-label{font-size:0.75rem;color:#606070}
 .lesson-layout{display:grid;grid-template-columns:260px 1fr;min-height:calc(100vh - 70px)}
-.lesson-sidebar{background:var(–bg2);border-right:1px solid var(–border);padding:1.5rem 0}
-.lesson-nav-title{font-family:‘IBM Plex Mono’,monospace;font-size:0.7rem;color:var(–text3);text-transform:uppercase;letter-spacing:0.05em;padding:0 1.25rem;margin-bottom:0.75rem}
+.lesson-sidebar{background:var(--bg2);border-right:1px solid var(--border);padding:1.5rem 0}
+.lesson-nav-title{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.05em;padding:0 1.25rem;margin-bottom:0.75rem}
 .lesson-nav{list-style:none}
-.lesson-nav-item{border-bottom:1px solid var(–border)}
-.lesson-nav-link{display:flex;align-items:center;gap:0.75rem;padding:0.875rem 1.25rem;cursor:pointer;color:var(–text2);transition:0.2s}
-.lesson-nav-link:hover{background:var(–bg3);color:var(–text)}
-.lesson-nav-link.active{background:var(–surface);color:var(–text);border-left:3px solid var(–accent)}
-.lesson-nav-link.done .ln-num{background:var(–green);border-color:var(–green);color:var(–bg)}
-.ln-num{width:22px;height:22px;border:1px solid var(–border2);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:‘IBM Plex Mono’,monospace;font-size:0.65rem}
+.lesson-nav-item{border-bottom:1px solid var(--border)}
+.lesson-nav-link{display:flex;align-items:center;gap:0.75rem;padding:0.875rem 1.25rem;cursor:pointer;color:var(--text2);transition:0.2s}
+.lesson-nav-link:hover{background:var(--bg3);color:var(--text)}
+.lesson-nav-link.active{background:var(--surface);color:var(--text);border-left:3px solid var(--accent)}
+.lesson-nav-link.done .ln-num{background:var(--green);border-color:var(--green);color:var(--bg)}
+.ln-num{width:22px;height:22px;border:1px solid var(--border2);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:0.65rem}
 .ln-text{font-size:0.8125rem}
 .lesson-main{padding:2.5rem 3rem;max-width:760px}
-.lesson-label{font-family:‘IBM Plex Mono’,monospace;font-size:0.7rem;color:var(–accent);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem}
-.lesson-title{font-family:‘Newsreader’,serif;font-size:1.75rem;margin-bottom:2rem}
-.lesson-body{color:var(–text2);line-height:1.85}
+.lesson-label{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem}
+.lesson-title{font-family:'Newsreader',serif;font-size:1.75rem;margin-bottom:2rem}
+.lesson-body{color:var(--text2);line-height:1.85}
 .lesson-body p{margin-bottom:1.25rem}
-.lesson-body strong{color:var(–text)}
-.lesson-body h3{color:var(–text);font-size:1.125rem;margin:1.75rem 0 0.75rem}
-.info-box{background:var(–bg2);border:1px solid var(–border);border-radius:10px;padding:1.25rem;margin:1.5rem 0}
-.info-box.tip{border-left:3px solid var(–accent)}
-.info-box.warn{border-left:3px solid var(–red);background:rgba(255,71,87,0.05)}
-.info-box.good{border-left:3px solid var(–green);background:rgba(0,214,143,0.05)}
-.info-box-label{font-family:‘IBM Plex Mono’,monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem}
-.info-box.tip .info-box-label{color:var(–accent)}
-.info-box.warn .info-box-label{color:var(–red)}
-.info-box.good .info-box-label{color:var(–green)}
-.quiz-wrap{background:var(–surface);border:1px solid var(–border);border-radius:12px;margin:2rem 0;overflow:hidden}
-.quiz-head{background:var(–bg2);padding:0.875rem 1.25rem;border-bottom:1px solid var(–border);font-family:‘IBM Plex Mono’,monospace;font-size:0.7rem;color:var(–text3);text-transform:uppercase;letter-spacing:0.05em}
+.lesson-body strong{color:var(--text)}
+.lesson-body h3{color:var(--text);font-size:1.125rem;margin:1.75rem 0 0.75rem}
+.info-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin:1.5rem 0}
+.info-box.tip{border-left:3px solid var(--accent)}
+.info-box.warn{border-left:3px solid var(--red);background:rgba(255,71,87,0.05)}
+.info-box.good{border-left:3px solid var(--green);background:rgba(0,214,143,0.05)}
+.info-box-label{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem}
+.info-box.tip .info-box-label{color:var(--accent)}
+.info-box.warn .info-box-label{color:var(--red)}
+.info-box.good .info-box-label{color:var(--green)}
+.quiz-wrap{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:2rem 0;overflow:hidden}
+.quiz-head{background:var(--bg2);padding:0.875rem 1.25rem;border-bottom:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.05em}
 .quiz-body{padding:1.25rem}
-.quiz-q{font-size:1rem;font-weight:500;color:var(–text);margin-bottom:1.25rem}
+.quiz-q{font-size:1rem;font-weight:500;color:var(--text);margin-bottom:1.25rem}
 .quiz-opts{display:flex;flex-direction:column;gap:0.625rem}
-.quiz-opt{display:flex;align-items:center;gap:0.875rem;padding:0.875rem 1rem;background:var(–bg2);border:1px solid var(–border);border-radius:8px;cursor:pointer;transition:0.2s}
-.quiz-opt:hover{border-color:var(–border2)}
-.quiz-opt.sel{border-color:var(–accent)}
-.quiz-opt.yes{border-color:var(–green);background:rgba(0,214,143,0.1)}
-.quiz-opt.no{border-color:var(–red);background:rgba(255,71,87,0.1)}
-.quiz-let{width:26px;height:26px;border:1px solid var(–border2);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:‘IBM Plex Mono’,monospace;font-size:0.7rem;color:var(–text2)}
-.quiz-opt.yes .quiz-let{background:var(–green);border-color:var(–green);color:var(–bg)}
-.quiz-opt.no .quiz-let{background:var(–red);border-color:var(–red);color:#fff}
-.quiz-txt{font-size:0.875rem;color:var(–text2)}
+.quiz-opt{display:flex;align-items:center;gap:0.875rem;padding:0.875rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:0.2s}
+.quiz-opt:hover{border-color:var(--border2)}
+.quiz-opt.sel{border-color:var(--accent)}
+.quiz-opt.yes{border-color:var(--green);background:rgba(0,214,143,0.1)}
+.quiz-opt.no{border-color:var(--red);background:rgba(255,71,87,0.1)}
+.quiz-let{width:26px;height:26px;border:1px solid var(--border2);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text2)}
+.quiz-opt.yes .quiz-let{background:var(--green);border-color:var(--green);color:var(--bg)}
+.quiz-opt.no .quiz-let{background:var(--red);border-color:var(--red);color:#fff}
+.quiz-txt{font-size:0.875rem;color:var(--text2)}
 .quiz-fb{margin-top:1rem;padding:0.875rem 1rem;border-radius:8px;font-size:0.875rem;display:none}
 .quiz-fb.show{display:block}
-.quiz-fb.yes{background:rgba(0,214,143,0.15);color:var(–green)}
-.quiz-fb.no{background:rgba(255,71,87,0.15);color:var(–red)}
-.lesson-foot{display:flex;justify-content:space-between;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(–border)}
+.quiz-fb.yes{background:rgba(0,214,143,0.15);color:var(--green)}
+.quiz-fb.no{background:rgba(255,71,87,0.15);color:var(--red)}
+.lesson-foot{display:flex;justify-content:space-between;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
 .lesson-btn{display:flex;align-items:center;gap:0.5rem;padding:0.75rem 1.25rem;font-size:0.875rem;font-weight:500;border-radius:8px;border:none;cursor:pointer;font-family:inherit;transition:0.2s}
-.lesson-btn.prev{background:var(–bg2);color:var(–text2);border:1px solid var(–border)}
-.lesson-btn.prev:hover{color:var(–text);border-color:var(–border2)}
-.lesson-btn.next{background:var(–accent);color:var(–bg)}
+.lesson-btn.prev{background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
+.lesson-btn.prev:hover{color:var(--text);border-color:var(--border2)}
+.lesson-btn.next{background:var(--accent);color:var(--bg)}
 .lesson-btn.next:hover{transform:translateY(-2px)}
 .lesson-btn:disabled{opacity:0.4;cursor:not-allowed;transform:none}
-
-.footer{border-top:1px solid var(–border);padding:3rem 0;background:var(–bg2)}
+.footer{border-top:1px solid var(--border);padding:3rem 0;background:var(--bg2)}
 .footer-inner{display:flex;justify-content:space-between;align-items:center}
-.footer-logo{font-family:‘IBM Plex Mono’,monospace;font-size:0.875rem;color:var(–text3)}
-.footer-links{display:flex;gap:2rem}
-.footer-links a{color:var(–text3);text-decoration:none;font-size:0.8125rem}
-.footer-links a:hover{color:var(–text)}
-
+.footer-logo{font-family:'IBM Plex Mono',monospace;font-size:0.875rem;color:var(--text3)}
+.footer-links a{color:var(--text3);text-decoration:none;font-size:0.8125rem}
+.footer-links a:hover{color:var(--text)}
 @media(max-width:900px){
 .nav-links{display:none}
 .sim-layout{grid-template-columns:1fr}
@@ -254,796 +243,446 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--tex
 .features-grid{grid-template-columns:1fr}
 }
 </style>
-
 </head>
 <body>
-
-<nav class="nav">
-<div class="nav-inner">
-    <div class="logo" onclick="nav('home')">
-        <div class="logo-icon">BA</div>
-        <div class="logo-text">Bag<span>Academy</span></div>
-    </div>
-    <div class="nav-links">
-        <span class="nav-link active" data-p="home" onclick="nav('home')">Home</span>
-        <span class="nav-link" data-p="learn" onclick="nav('learn')">Learn</span>
-        <span class="nav-link" data-p="simulator" onclick="nav('simulator')">Simulator</span>
-        <span class="nav-link" data-p="about" onclick="nav('about')">About</span>
-    </div>
-    <button class="nav-cta" onclick="nav('learn')">Start Free →</button>
+<nav class="nav"><div class="nav-inner">
+<div class="logo" onclick="nav('home')"><div class="logo-icon">BA</div><div class="logo-text">Bag<span>Academy</span></div></div>
+<div class="nav-links">
+<span class="nav-link active" data-p="home" onclick="nav('home')">Home</span>
+<span class="nav-link" data-p="learn" onclick="nav('learn')">Learn</span>
+<span class="nav-link" data-p="simulator" onclick="nav('simulator')">Simulator</span>
+<span class="nav-link" data-p="about" onclick="nav('about')">About</span>
 </div>
-</nav>
-
-<!-- HOME -->
+<button class="nav-cta" onclick="nav('learn')">Start Free</button>
+</div></nav>
 
 <div class="page active" id="page-home">
-<section class="hero">
-<div class="hero-bg"></div>
-<div class="container">
-<div class="hero-content">
-    <div class="hero-badge">100% Free • No Signup Required</div>
-    <h1>Learn crypto without <em>losing your shirt</em></h1>
-    <p class="hero-sub">Master blockchain fundamentals, trading mechanics, and scam detection through hands-on simulations. Built by a trader who lost $1,700 learning the hard way.</p>
-    <div class="hero-buttons">
-        <button class="btn btn-primary" onclick="nav('learn')">Start Learning →</button>
-        <button class="btn btn-secondary" onclick="nav('simulator')">Try Rug Simulator</button>
-    </div>
-    <div class="hero-stats">
-        <div><div class="hero-stat-value">8</div><div class="hero-stat-label">In-Depth Modules</div></div>
-        <div><div class="hero-stat-value">$500</div><div class="hero-stat-label">Paper Trading</div></div>
-        <div><div class="hero-stat-value">∞</div><div class="hero-stat-label">Rug Simulations</div></div>
-    </div>
+<section class="hero"><div class="hero-bg"></div><div class="container"><div class="hero-content">
+<div class="hero-badge">100% Free - No Signup Required</div>
+<h1>Learn crypto without <em>losing your shirt</em></h1>
+<p class="hero-sub">Master blockchain fundamentals, trading mechanics, and scam detection through hands-on simulations. Built by a trader who lost over $6000 learning the hard way.</p>
+<div class="hero-buttons">
+<button class="btn btn-primary" onclick="nav('learn')">Start Learning</button>
+<button class="btn btn-secondary" onclick="nav('simulator')">Try Rug Simulator</button>
 </div>
+<div class="hero-stats">
+<div><div class="hero-stat-value">8</div><div class="hero-stat-label">In-Depth Modules</div></div>
+<div><div class="hero-stat-value">$500</div><div class="hero-stat-label">Paper Trading</div></div>
+<div><div class="hero-stat-value">6</div><div class="hero-stat-label">Rug Simulations</div></div>
 </div>
-</section>
-
-<section class="section" style="background:var(--bg2);border-top:1px solid var(--border)">
-<div class="container">
+</div></div></section>
+<section class="section" style="background:var(--bg2);border-top:1px solid var(--border)"><div class="container">
 <div class="section-header">
-    <div class="section-label">Why BagAcademy</div>
-    <div class="section-title">Education that respects your intelligence</div>
-    <div class="section-sub">No fluff, no upsells. Just practical knowledge delivered clearly.</div>
+<div class="section-label">Why BagAcademy</div>
+<div class="section-title">Education that respects your intelligence</div>
+<div class="section-sub">No fluff, no upsells. Just practical knowledge delivered clearly.</div>
 </div>
 <div class="features-grid">
-    <div class="feature-card">
-        <div class="feature-icon">🎯</div>
-        <h3>Learn by Doing</h3>
-        <p>Paper trade with $500 of fake money. Experience market mechanics without risking a cent.</p>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon">💀</div>
-        <h3>Get Rugged Safely</h3>
-        <p>Our simulator lets you experience rug pulls firsthand—the pump, the dump, the empty wallet.</p>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <h3>Real Chart Skills</h3>
-        <p>Learn to read candlesticks, identify support/resistance, and set proper stop-losses.</p>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon">🛡️</div>
-        <h3>Scam Detection</h3>
-        <p>Spot honeypots, fake liquidity, and social engineering before they drain your wallet.</p>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon">🧠</div>
-        <h3>Trading Psychology</h3>
-        <p>Understand why 95% of traders lose and how to avoid the emotional traps.</p>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <h3>No Gatekeeping</h3>
-        <p>Everything is free. No premium tiers, no Discord alpha groups, no paid signals.</p>
-    </div>
+<div class="feature-card"><div class="feature-icon">🎯</div><h3>Learn by Doing</h3><p>Paper trade with $500 of fake money. Experience market mechanics without risking a cent.</p></div>
+<div class="feature-card"><div class="feature-icon">💀</div><h3>Get Rugged Safely</h3><p>Our simulator lets you experience rug pulls firsthand - the pump, the dump, the empty wallet.</p></div>
+<div class="feature-card"><div class="feature-icon">📊</div><h3>Real Chart Skills</h3><p>Learn to read candlesticks, identify support/resistance, and set proper stop-losses.</p></div>
+<div class="feature-card"><div class="feature-icon">🛡️</div><h3>Scam Detection</h3><p>Spot honeypots, fake liquidity, and social engineering before they drain your wallet.</p></div>
+<div class="feature-card"><div class="feature-icon">🧠</div><h3>Trading Psychology</h3><p>Understand why 95% of traders lose and how to avoid the emotional traps.</p></div>
+<div class="feature-card"><div class="feature-icon">⚡</div><h3>No Gatekeeping</h3><p>Everything is free. No premium tiers, no Discord alpha groups, no paid signals.</p></div>
 </div>
-</div>
-</section>
-
-<footer class="footer">
-<div class="container">
-<div class="footer-inner">
-    <div class="footer-logo">© 2025 BagAcademy — Free Forever</div>
-    <div class="footer-links">
-        <a href="#">Twitter</a>
-        <a href="#">GitHub</a>
-    </div>
-</div>
-</div>
-</footer>
+</div></section>
+<footer class="footer"><div class="container"><div class="footer-inner">
+<div class="footer-logo">2025 BagAcademy - Free Forever</div>
+<div class="footer-links"><a href="#"></a></div>
+</div></div></footer>
 </div>
 
-<!-- LEARN PAGE -->
-
-<div class="page" id="page-learn">
-<div class="container" style="padding-top:2rem;padding-bottom:4rem">
+<div class="page" id="page-learn"><div class="container" style="padding-top:2rem;padding-bottom:4rem">
 <div class="section-header">
-    <div class="section-label">Full Curriculum</div>
-    <div class="section-title">Eight modules to trading competence</div>
-    <div class="section-sub">From "what's a blockchain" to reading charts and managing risk.</div>
+<div class="section-label">Full Curriculum</div>
+<div class="section-title">Eight modules to trading competence</div>
+<div class="section-sub">From whats a blockchain to reading charts and managing risk.</div>
 </div>
 <div class="module-list" id="moduleList"></div>
-</div>
-</div>
+</div></div>
 
-<!-- SIMULATOR -->
-
-<div class="page" id="page-simulator">
-<div class="container sim-page">
-<div class="sim-header">
-    <h1>Rug Pull Simulator</h1>
-    <p>Experience what it feels like to get rugged—without losing real money</p>
-</div>
+<div class="page" id="page-simulator"><div class="container sim-page">
+<div class="sim-header"><h1>Rug Pull Simulator</h1><p>Experience what it feels like to get rugged - without losing real money</p></div>
 <div class="sim-layout">
-    <div class="wallet-panel">
-        <div class="wallet-title">Paper Wallet <button class="wallet-reset" onclick="resetWallet()">Reset</button></div>
-        <div class="wallet-balance">
-            <div class="balance-label">Total Value</div>
-            <div class="balance-value" id="totalValue">$500.00</div>
-            <div class="balance-pnl" id="totalPnl">+$0.00 (0%)</div>
-        </div>
-        <div class="holdings-title">Holdings</div>
-        <div id="holdingsList">
-            <div class="holding">
-                <div class="holding-left">
-                    <div class="holding-icon" style="background:#1a1a2e">💵</div>
-                    <div><div class="holding-name">USD</div><div class="holding-amt">Cash</div></div>
-                </div>
-                <div class="holding-right">
-                    <div class="holding-val" id="cashBalance">$500.00</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="trading-area">
-        <div class="trading-tabs">
-            <button class="trading-tab active" onclick="showTab('market')">🪙 Market</button>
-            <button class="trading-tab" onclick="showTab('ruginfo')">💀 Rug Types</button>
-        </div>
-        <div class="trading-content" id="tradingContent"></div>
-    </div>
+<div class="wallet-panel">
+<div class="wallet-title">Paper Wallet <button class="wallet-reset" onclick="resetWallet()">Reset</button></div>
+<div class="wallet-balance">
+<div class="balance-label">Total Value</div>
+<div class="balance-value" id="totalValue">$500.00</div>
+<div class="balance-pnl" id="totalPnl">+$0.00 (0%)</div>
+</div>
+<div class="holdings-title">Holdings</div>
+<div id="holdingsList"></div>
+</div>
+<div class="trading-area">
+<div class="trading-tabs">
+<button class="trading-tab active" onclick="showTab('market')">Market</button>
+<button class="trading-tab" onclick="showTab('ruginfo')">Rug Types</button>
+</div>
+<div class="live-chart" id="liveChart">
+<div class="chart-header">
+<div class="chart-token"><div class="chart-icon" id="chartIcon">💎</div><div class="chart-name" id="chartName">DMND</div></div>
+<div class="chart-price" id="chartPrice">$0.00042</div>
+</div>
+<div class="chart-canvas"><canvas id="priceChart"></canvas></div>
+<div class="chart-status" id="chartStatus">Watching price action...</div>
+</div>
+<div class="trading-content" id="tradingContent"></div>
 </div>
 </div>
-</div>
-
-<!-- ABOUT -->
+</div></div>
 
 <div class="page" id="page-about">
-<div class="about-hero">
-<div class="container">
-    <h1>I lost <em>$1,700</em> so you don't have to</h1>
+<div class="about-hero"><div class="container"><h1>I lost <em>$6000</em> so you dont have to</h1></div></div>
+<div class="container"><div class="about-grid">
+<div class="about-story">
+<p>I spent a year trading meme coins on Solana. Degen hours. Telegram alpha groups. The whole thing.</p>
+<p>The result? <strong>Negative $6000 PnL.</strong></p>
+<p>But heres the thing - I didnt walk away empty-handed. I learned to read charts. I learned how liquidity pools actually work. I figured out how scammers operate and why most community projects are just slow rugs.</p>
+<p>I learned to code well enough to build trading tools. I understood <span class="hl">why 95% of traders lose</span> and what separates the 5% who dont.</p>
+<p>That $6000 wasnt lost. <strong>It was tuition.</strong></p>
+<p>BagAcademy exists because I wish someone had taught me this stuff before I learned it the expensive way. No course fees. No Discord upsells. No premium signals. Just everything I know, organized and free.</p>
 </div>
+<div class="about-stats">
+<div class="about-stat"><div class="about-stat-val red">-$6,000</div><div class="about-stat-label">My tuition to the market</div></div>
+<div class="about-stat"><div class="about-stat-val">1 year</div><div class="about-stat-label">Of daily trading</div></div>
+<div class="about-stat"><div class="about-stat-val green">$0</div><div class="about-stat-label">Cost to learn here</div></div>
+<div class="about-stat"><div class="about-stat-val">8</div><div class="about-stat-label">Comprehensive modules</div></div>
 </div>
-<div class="container">
-<div class="about-grid">
-    <div class="about-story">
-        <p>I spent a year trading meme coins on Solana. Degen hours. Telegram alpha groups. The whole thing.</p>
-        <p>The result? <strong>Negative $1,700 PnL.</strong></p>
-        <p>But here's the thing—I didn't walk away empty-handed. I learned to read charts. I learned how liquidity pools actually work. I figured out how scammers operate and why most "community" projects are just slow rugs.</p>
-        <p>I learned to code well enough to build trading tools. I understood <span class="hl">why 95% of traders lose</span> and what separates the 5% who don't.</p>
-        <p>That $1,700 wasn't lost. <strong>It was tuition.</strong></p>
-        <p>BagAcademy exists because I wish someone had taught me this stuff before I learned it the expensive way. No course fees. No Discord upsells. No "premium signals." Just everything I know, organized and free.</p>
-        <p>If you finish this and decide crypto isn't for you—that's a win. You found out for free instead of finding out at $1,700.</p>
-    </div>
-    <div class="about-stats">
-        <div class="about-stat"><div class="about-stat-val red">-$1,700</div><div class="about-stat-label">My tuition to the market</div></div>
-        <div class="about-stat"><div class="about-stat-val">1 year</div><div class="about-stat-label">Of daily trading</div></div>
-        <div class="about-stat"><div class="about-stat-val green">$0</div><div class="about-stat-label">Cost to learn here</div></div>
-        <div class="about-stat"><div class="about-stat-val">8</div><div class="about-stat-label">Comprehensive modules</div></div>
-    </div>
-</div>
-</div>
+</div></div>
 </div>
 
-<!-- LESSON PAGE -->
+<div class="page" id="page-lesson"><div class="lesson-layout">
+<aside class="lesson-sidebar">
+<div class="lesson-nav-title" id="lessonModTitle">Module</div>
+<ul class="lesson-nav" id="lessonNav"></ul>
+</aside>
+<main class="lesson-main" id="lessonMain"></main>
+</div></div>
 
-<div class="page" id="page-lesson">
-<div class="lesson-layout">
-    <aside class="lesson-sidebar">
-        <div class="lesson-nav-title" id="lessonModTitle">Module</div>
-        <ul class="lesson-nav" id="lessonNav"></ul>
-    </aside>
-    <main class="lesson-main" id="lessonMain"></main>
-</div>
-</div>
-
-<!-- TRADE MODAL -->
-
-<div class="modal-bg" id="tradeModal">
-<div class="modal">
-    <div class="modal-head">
-        <div class="modal-title" id="modalTitle">Buy Token</div>
-        <button class="modal-close" onclick="closeModal()">×</button>
-    </div>
-    <div class="modal-body" id="modalBody"></div>
-</div>
-</div>
-
-<!-- RUG SCREEN -->
+<div class="modal-bg" id="tradeModal"><div class="modal">
+<div class="modal-head"><div class="modal-title" id="modalTitle">Buy Token</div><button class="modal-close" onclick="closeModal()">X</button></div>
+<div class="modal-body" id="modalBody"></div>
+</div></div>
 
 <div class="rug-screen" id="rugScreen">
 <div class="rug-price" id="rugPrice">-98%</div>
 <div class="rug-label">You just got rugged.</div>
-<div class="rug-type" id="rugType">HARD RUG — Liquidity Removed</div>
-<div class="rug-explain" id="rugExplain">The developer removed all liquidity from the pool. Your tokens are now worthless and untradeable. This happened in under 10 seconds.</div>
+<div class="rug-type" id="rugType">HARD RUG - Liquidity Removed</div>
+<div class="rug-explain" id="rugExplain">The developer removed all liquidity from the pool.</div>
 <div class="rug-stats">
-    <div><div class="rug-stat-val" id="rugInvested">$50.00</div><div class="rug-stat-label">You Invested</div></div>
-    <div><div class="rug-stat-val red" id="rugLost">$49.00</div><div class="rug-stat-label">You Lost</div></div>
-    <div><div class="rug-stat-val" id="rugRemain">$1.00</div><div class="rug-stat-label">Remaining</div></div>
+<div><div class="rug-stat-val" id="rugInvested">$50.00</div><div class="rug-stat-label">You Invested</div></div>
+<div><div class="rug-stat-val red" id="rugLost">$49.00</div><div class="rug-stat-label">You Lost</div></div>
+<div><div class="rug-stat-val" id="rugRemain">$1.00</div><div class="rug-stat-label">Remaining</div></div>
 </div>
-<button class="btn btn-primary" onclick="closeRug()">I Understand — Continue</button>
+<button class="btn btn-primary" onclick="closeRug()">I Understand - Continue</button>
 </div>
-
 <script>
-// STATE
-let wallet = { cash: 500, holdings: {}, startValue: 500 };
-let currentModule = null;
-let currentLesson = 0;
+var wallet={cash:500,holdings:{},startValue:500};
+var currentModule=null,currentLesson=0;
+var priceHistory=[],chartInterval=null,activeToken=null,priceMultiplier=1;
 
-// TOKENS
-const tokens = [
-    { id: 'bonk', name: 'SafeMoon2.0', ticker: 'SAFM', icon: '🌙', color: '#3498db', price: 0.00042, chg: 847, tags: ['new','risk'], rug: 'hard', rugDelay: 8000 },
-    { id: 'pepe', name: 'ElonDoge420', ticker: 'EDOGE', icon: '🐕', color: '#f39c12', price: 0.0000089, chg: 2341, tags: ['new'], rug: 'slow', rugDelay: 15000 },
-    { id: 'wojak', name: 'WojakFinance', ticker: 'WOJ', icon: '😢', color: '#9b59b6', price: 0.0234, chg: 156, tags: ['liq'], rug: 'honey', rugDelay: 5000 },
-    { id: 'chad', name: 'GigaChadInu', ticker: 'GIGA', icon: '💪', color: '#e74c3c', price: 0.00000034, chg: 5420, tags: ['new','risk'], rug: 'hard', rugDelay: 6000 },
-    { id: 'frog', name: 'PepeFork', ticker: 'PFORK', icon: '🐸', color: '#2ecc71', price: 0.000067, chg: 432, tags: [], rug: 'slow', rugDelay: 20000 },
-    { id: 'cat', name: 'CatCoinAI', ticker: 'CCAT', icon: '🐱', color: '#e91e63', price: 0.0089, chg: 89, tags: ['liq'], rug: 'honey', rugDelay: 4000 },
+var tokens=[
+{id:‘diamond’,name:‘Diamond’,ticker:‘DMND’,icon:‘💎’,color:’#3498db’,price:0.00042,chg:847,tags:[‘new’,‘risk’],rug:‘hard’,rugDelay:12000},
+{id:‘demon’,name:‘Demon’,ticker:‘DEMON’,icon:‘👹’,color:’#e74c3c’,price:0.0089,chg:2341,tags:[‘new’],rug:‘slow’,rugDelay:18000},
+{id:‘clown’,name:‘Clown’,ticker:‘CLOWN’,icon:‘🤡’,color:’#9b59b6’,price:0.0234,chg:156,tags:[‘liq’],rug:‘honey’,rugDelay:8000},
+{id:‘ape’,name:‘Ape’,ticker:‘APE’,icon:‘🦍’,color:’#f39c12’,price:0.00034,chg:5420,tags:[‘new’,‘risk’],rug:‘hard’,rugDelay:10000},
+{id:‘moon’,name:‘Moon’,ticker:‘MOON’,icon:‘🌙’,color:’#1abc9c’,price:0.00067,chg:432,tags:[],rug:‘slow’,rugDelay:22000},
+{id:‘skull’,name:‘Skull’,ticker:‘SKULL’,icon:‘💀’,color:’#e91e63’,price:0.0012,chg:89,tags:[‘liq’],rug:‘honey’,rugDelay:7000}
 ];
 
-const rugTypes = {
-    hard: { name: 'HARD RUG', desc: 'The developer removed all liquidity instantly. One second you could trade, the next the pool was empty. Your tokens became worthless immediately with no way to sell.', loss: 0.98 },
-    slow: { name: 'SLOW RUG', desc: 'The developer gradually sold their holdings over time, crashing the price while pretending to still be working on the project. By the time you realized, it was too late.', loss: 0.85 },
-    honey: { name: 'HONEYPOT', desc: 'The contract allowed buying but blocked selling. You could watch your "gains" grow, but when you tried to take profit—nothing. The sell function was disabled for everyone except the developer.', loss: 0.99 }
+var rugTypes={
+hard:{name:‘HARD RUG’,desc:‘The developer removed all liquidity instantly. One second you could trade, the next the pool was empty. Your tokens became worthless immediately with no way to sell.’,loss:0.98},
+slow:{name:‘SLOW RUG’,desc:‘The developer gradually sold their holdings over time, crashing the price while pretending to still be working on the project. By the time you realized, it was too late.’,loss:0.85},
+honey:{name:‘HONEYPOT’,desc:‘The contract allowed buying but blocked selling. You could watch your gains grow, but when you tried to take profit - nothing. The sell function was disabled for everyone except the developer.’,loss:0.99}
 };
 
-// MODULES
-const modules = [
-    { title: 'Blockchain Basics', sub: 'What crypto actually is and why it exists', lessons: [
-        { title: 'What Is a Blockchain?', content: `<p>A blockchain is a shared database that nobody owns but everyone can verify. Think of it like a public Google Doc that records every transaction ever made—but once something is written, it can never be edited or deleted.</p><p>Three key properties make blockchains unique:</p><div class="info-box tip"><div class="info-box-label">Key Concept</div><p><strong>Distributed:</strong> Thousands of computers worldwide hold identical copies. No single company controls it.</p><p><strong>Immutable:</strong> Once recorded, data cannot be changed. History is permanent.</p><p><strong>Transparent:</strong> Anyone can view every transaction that has ever occurred.</p></div><p>This matters because you can prove you own something digital without trusting a company to verify it. Your bank knows your balance because they keep the record. With crypto, the blockchain <em>is</em> the record—publicly verifiable by anyone.</p>`, quiz: { q: 'What makes a blockchain different from a normal database?', opts: ['It is faster', 'A company controls it', 'It is distributed, immutable, and transparent', 'It stores data in the cloud'], ans: 2 }},
-        { title: 'Why Cryptocurrency Exists', content: `<p>Every time you send money digitally—through a bank, PayPal, Venmo—you're trusting a middleman. They can freeze your account, reverse transactions, charge fees, or simply go offline.</p><div class="info-box warn"><div class="info-box-label">The Problem</div><p>In 2008, banks nearly collapsed the global economy. People's savings vanished. Trust in financial institutions cratered.</p></div><p>That same year, an anonymous person or group called <strong>Satoshi Nakamoto</strong> published the Bitcoin whitepaper: a system for transferring value without requiring trust in any institution.</p><p>The innovation was "trustless" transactions—you don't need to trust the other person OR a company. You trust mathematics and code that anyone can verify.</p><div class="info-box tip"><div class="info-box-label">Key Insight</div><p>"Trustless" doesn't mean untrustworthy. It means you don't <em>need</em> to trust anyone. The system works even if every participant is acting selfishly.</p></div>`, quiz: { q: 'What problem was Bitcoin designed to solve?', opts: ['Making transactions faster', 'Removing the need for middlemen', 'Creating digital art', 'Replacing the stock market'], ans: 1 }},
-        { title: 'Bitcoin vs Ethereum vs Solana', content: `<p>Thousands of cryptocurrencies exist. Most are worthless. But understanding the three major ecosystems helps you evaluate everything else.</p><h3>Bitcoin (BTC)</h3><p>The original. "Digital gold." It does one thing—store and transfer value—and does it securely. People hold Bitcoin believing it will retain value over time.</p><h3>Ethereum (ETH)</h3><p>Bitcoin but programmable. Developers can build applications on it using "smart contracts"—code that executes automatically when conditions are met. This enabled DeFi, NFTs, and most crypto innovation.</p><h3>Solana (SOL)</h3><p>Similar to Ethereum but much faster and cheaper. Transactions cost fractions of a cent. The tradeoff: more centralized and has experienced outages. Currently the most popular chain for meme coin trading.</p><div class="info-box tip"><div class="info-box-label">Simple Analogy</div><p>Bitcoin = high-end steakhouse (one thing, done well, expensive). Ethereum = premium food hall (variety, but crowded and pricey). Solana = fast-casual chain (quick and cheap, occasionally the kitchen catches fire).</p></div>`, quiz: { q: 'Why do meme coin traders prefer Solana?', opts: ['Better security', 'Government backing', 'Very low transaction fees', 'Higher returns guaranteed'], ans: 2 }},
-        { title: 'CEX vs DEX', content: `<p>There are two fundamentally different ways to trade crypto:</p><h3>Centralized Exchanges (CEX)</h3><p>Coinbase, Binance, Kraken. A company holds your crypto for you. You log in with email and password like any website. User-friendly but with a critical risk...</p><div class="info-box warn"><div class="info-box-label">Critical Risk</div><p>You don't control your crypto—the exchange does. If they get hacked, go bankrupt (like FTX in 2022), or freeze your account, your money is gone. "Not your keys, not your coins."</p></div><h3>Decentralized Exchanges (DEX)</h3><p>Jupiter, Uniswap, Raydium. No company—just code. You connect your own wallet and trade directly through smart contracts. You always maintain custody of your assets.</p><p>DEXs require more knowledge and there's no customer support, but your funds can't be frozen or seized by the platform.</p>`, quiz: { q: 'What is the main risk of centralized exchanges?', opts: ['Higher fees', 'Slower transactions', 'They control your funds and can lose/freeze them', 'Limited coin selection'], ans: 2 }}
-    ]},
-    { title: 'Wallet Security', sub: 'Protecting your assets from theft', lessons: [
-        { title: 'What Is a Crypto Wallet?', content: `<p>Here's what confuses most beginners: a crypto wallet doesn't "hold" your crypto. Your crypto exists on the blockchain permanently. The wallet holds the <strong>private key</strong> that proves you own it.</p><div class="info-box tip"><div class="info-box-label">Think of It Like This</div><p>Your wallet address is like an email address—you can share it publicly to receive funds. Your private key is like your email password—never share it with anyone, ever.</p></div><h3>Wallet Types</h3><p><strong>Hot Wallets:</strong> Connected to the internet. Browser extensions like Phantom or MetaMask. Convenient for trading but more vulnerable to hacks.</p><p><strong>Cold Wallets:</strong> Hardware devices (Ledger, Trezor) that store keys offline. Much more secure. Use these for significant holdings.</p>`, quiz: { q: 'What does a wallet actually store?', opts: ['Your coins', 'The private key proving ownership', 'A copy of the blockchain', 'Your transaction history'], ans: 1 }},
-        { title: 'Seed Phrases Explained', content: `<p>When you create a wallet, you get a <strong>seed phrase</strong>—12 or 24 random words. This phrase can regenerate your entire wallet from scratch.</p><div class="info-box warn"><div class="info-box-label">Critical Security</div><p>Anyone with your seed phrase has complete, permanent control of your funds. They can drain your wallet in seconds from anywhere in the world. There is no recovery mechanism.</p></div><h3>Never Do These Things</h3><p>• Take a screenshot or photo of your seed phrase<br>• Store it in a notes app, email, or cloud service<br>• Enter it on any website (legitimate services NEVER ask)<br>• Share it with anyone claiming to be "support"</p><h3>Proper Storage</h3><p>• Write it on paper, make multiple copies<br>• Store copies in different physical locations<br>• Consider a metal backup for fire/water resistance</p>`, quiz: { q: 'Someone claiming to be Phantom support asks for your seed phrase. What do you do?', opts: ['Provide it to fix your issue', 'Give only half the words', 'Ignore and block—it is a scam', 'Verify their identity first'], ans: 2 }},
-        { title: 'Security Best Practices', content: `<p>Having a wallet is one thing. Keeping it secure is another.</p><h3>Use Multiple Wallets</h3><p><strong>Hot wallet:</strong> Small amounts for active trading. Accept this could be compromised.<br><strong>Cold wallet:</strong> Significant holdings, rarely accessed.<br><strong>Burner wallet:</strong> For sketchy sites or unknown mints. Never keep funds here.</p><div class="info-box warn"><div class="info-box-label">Common Attack Vectors</div><p>• Phishing sites identical to legitimate ones<br>• Malicious transactions that drain your wallet when signed<br>• Fake airdrops requiring you to "claim" (actually wallet drainers)<br>• Social engineering via DMs</p></div><div class="info-box good"><div class="info-box-label">Protective Habits</div><p>• Bookmark legitimate sites—never use search results<br>• Always read what you're signing<br>• If a token appears unsolicited, don't interact with it<br>• Regularly revoke token approvals</p></div>`, quiz: { q: 'A random NFT appears in your wallet. What should you do?', opts: ['Sell it for free money', 'Click the link to learn more', 'Leave it alone—interacting could drain your wallet', 'Transfer it to your main wallet'], ans: 2 }}
-    ]},
-    { title: 'Moving Money', sub: 'Transactions, gas fees, and block explorers', lessons: [
-        { title: 'On-Ramps and Funding', content: `<p>To get crypto into your wallet, you need to convert traditional currency.</p><h3>Centralized Exchanges</h3><p>Coinbase, Kraken, etc. Link your bank, buy crypto, withdraw to your wallet. Requires identity verification. Generally lowest fees for larger amounts.</p><h3>On-Ramp Services</h3><p>MoonPay, Ramp. Built into many wallets. Buy with a card directly. Higher fees but more convenient for smaller amounts.</p><div class="info-box warn"><div class="info-box-label">Critical Warning</div><p>Always triple-check the wallet address before sending. Wrong address = funds gone forever. There is no undo button.</p></div><div class="info-box tip"><div class="info-box-label">Pro Tip</div><p>For your first transaction, send a tiny test amount ($1). Verify it arrives. Then send the rest.</p></div>`, quiz: { q: 'What is most important before sending crypto?', opts: ['Current price', 'Address is correct', 'Time of day', 'Market trend'], ans: 1 }},
-        { title: 'Understanding Gas Fees', content: `<p>Every blockchain transaction requires a fee called "gas." This payment incentivizes validators to process your transaction.</p><h3>Gas Varies by Chain</h3><p><strong>Ethereum:</strong> Expensive. Simple transfers cost $1-5. Complex DeFi transactions can cost $20-100+ during congestion.</p><p><strong>Solana:</strong> Extremely cheap. Most transactions cost $0.001 or less. This is why meme coins trade primarily on Solana.</p><div class="info-box warn"><div class="info-box-label">Common Mistake</div><p>Converting ALL your SOL to a meme coin, then having none left to pay the gas fee when you want to sell. Always keep a small balance for fees.</p></div>`, quiz: { q: 'Why is Solana popular for meme coins?', opts: ['Better technology', 'Much lower fees', 'Government approved', 'Older blockchain'], ans: 1 }},
-        { title: 'Reading Block Explorers', content: `<p>Block explorers are search engines for blockchain data. They let you verify any transaction, wallet, or token.</p><h3>Common Explorers</h3><p><strong>Solscan.io</strong> — Solana<br><strong>Etherscan.io</strong> — Ethereum</p><h3>What to Check Before Buying</h3><p>• When was the token created? (Just now = very risky)<br>• How many holders? (Few = no real community)<br>• Top wallet concentration? (One wallet with 50%+ = danger)<br>• Is liquidity locked?</p><div class="info-box tip"><div class="info-box-label">Key Insight</div><p>Use tools like RugCheck.xyz or DEXScreener to quickly analyze tokens. Poor scores = stay away regardless of hype.</p></div>`, quiz: { q: 'What should you check on a block explorer before buying?', opts: ['Twitter followers', 'Creation date and holder distribution', 'Price chart', 'Celebrity endorsements'], ans: 1 }}
-    ]},
-    { title: 'How DEXs Work', sub: 'Liquidity pools, slippage, and swaps', lessons: [
-        { title: 'Liquidity Pools Explained', content: `<p>Unlike traditional exchanges with order books, DEXs use <strong>liquidity pools</strong>—reserves of paired tokens that users have deposited.</p><p>When you trade, you're swapping against the pool, not another person. A SOL/USDC pool might contain $1M of each. When you buy SOL, you add USDC and remove SOL from the pool.</p><h3>Automated Market Makers (AMMs)</h3><p>Price is determined by a formula based on the token ratio. More demand = less in pool = higher price. It's supply and demand, automated.</p><div class="info-box warn"><div class="info-box-label">Important</div><p>DEX trades are irreversible the moment they confirm. No cancel button. No customer support. No refunds.</p></div>`, quiz: { q: 'What determines price on a DEX?', opts: ['The DEX company', 'Token ratio in the liquidity pool', 'Seller requests', 'Coinbase price'], ans: 1 }},
-        { title: 'Slippage and Why It Matters', content: `<p><strong>Slippage</strong> is the difference between expected price and actual price. Large trades relative to pool size move the price against you as they execute.</p><h3>Slippage Tolerance</h3><p>When you set 5% slippage, you're saying "I'll accept up to 5% worse than quoted." If actual slippage exceeds this, the transaction fails.</p><div class="info-box warn"><div class="info-box-label">Red Flag</div><p>If a token requires 10%+ slippage to buy, this usually means very low liquidity or built-in taxes—often signs of scams.</p></div><p>Established tokens: 0.5-1% slippage. Meme coins: 5-15%. Need more than 15%? Reconsider the trade.</p>`, quiz: { q: 'A token needs 15% slippage. What does this indicate?', opts: ['Great opportunity', 'Low liquidity or taxes—extreme caution', 'Normal for all coins', 'Token is very popular'], ans: 1 }},
-        { title: 'The Liquidity Trap', content: `<p><strong>Liquidity</strong> is how easily you can trade without moving the price. It's often the difference between profit and disaster.</p><div class="info-box warn"><div class="info-box-label">The Trap</div><p>You buy a meme coin at $10K market cap. It goes to $100K—you're up 10x! But liquidity is only $20K. When you try to sell your $5K position, your own sell crashes the price. Paper gains evaporate.</p></div><p>Always check liquidity before entering. If you can't exit without tanking price, you're trapped.</p><div class="info-box tip"><div class="info-box-label">Rule of Thumb</div><p>Never trade more than 1-2% of a pool's liquidity at once. $50K pool = keep trades under $500-1000.</p></div>`, quiz: { q: 'Why might you not realize paper gains on low-liquidity coins?', opts: ['Blockchain prevents selling', 'Selling crashes the price', 'Paper gains are fake', 'Need developer permission'], ans: 1 }}
-    ]},
-    { title: 'Chart Analysis', sub: 'Reading price action and technical indicators', lessons: [
-        { title: 'Understanding Candlesticks', content: `<p>Candlestick charts display four data points per time period: <strong>Open, High, Low, Close (OHLC)</strong>.</p><h3>Reading a Candle</h3><p><strong>Body:</strong> The thick part shows open-to-close range.<br><strong>Wicks:</strong> The thin lines show high and low extremes.<br><strong>Green/White:</strong> Close higher than open (bullish).<br><strong>Red/Black:</strong> Close lower than open (bearish).</p><div class="info-box tip"><div class="info-box-label">Key Patterns</div><p><strong>Doji:</strong> Open and close nearly equal. Indecision.<br><strong>Hammer:</strong> Small body, long lower wick. Potential reversal.<br><strong>Engulfing:</strong> Current candle completely covers previous. Strong momentum.</p></div>`, quiz: { q: 'A green candlestick indicates:', opts: ['Price went down', 'Price closed higher than it opened', 'High volume', 'Strong selling'], ans: 1 }},
-        { title: 'Support and Resistance', content: `<p><strong>Support:</strong> Price level where buying pressure historically stops decline. Think of it as a floor.</p><p><strong>Resistance:</strong> Price level where selling pressure historically stops advances. Think of it as a ceiling.</p><h3>How to Identify</h3><p>Look for price levels that have been tested multiple times. The more times a level holds, the stronger it becomes.</p><div class="info-box tip"><div class="info-box-label">Trading Implication</div><p>When support breaks, it often becomes resistance (and vice versa). These "flips" can signal major trend changes.</p></div><p>Support/resistance works because traders remember prices. If they bought at $10 and it dropped, they'll often sell when it returns to $10 to "break even."</p>`, quiz: { q: 'When a support level breaks, what often happens?', opts: ['Price immediately recovers', 'It becomes resistance', 'Nothing changes', 'Trading stops'], ans: 1 }},
-        { title: 'Volume Analysis', content: `<p><strong>Volume</strong> shows how much was traded during a period. It confirms or contradicts price movements.</p><h3>Volume Rules</h3><p><strong>Price up + High volume:</strong> Strong buying. Trend likely continues.<br><strong>Price up + Low volume:</strong> Weak move. Potential reversal.<br><strong>Price down + High volume:</strong> Strong selling. More downside likely.<br><strong>Breakout + High volume:</strong> Legitimate breakout.<br><strong>Breakout + Low volume:</strong> Likely false breakout.</p><div class="info-box warn"><div class="info-box-label">Warning Sign</div><p>Extremely high volume spikes often mark tops or bottoms. When "everyone" is buying/selling, the move is usually ending.</p></div>`, quiz: { q: 'Price breaks resistance on low volume. What does this suggest?', opts: ['Strong breakout', 'Potential false breakout', 'Buy immediately', 'Volume does not matter'], ans: 1 }}
-    ]},
-    { title: 'Risk Management', sub: 'Stop losses, take profits, and position sizing', lessons: [
-        { title: 'Stop Loss Orders', content: `<p>A <strong>stop loss</strong> automatically sells your position when price drops to a specified level. It limits your downside.</p><h3>Setting Stop Losses</h3><p>Common approaches:<br>• <strong>Percentage-based:</strong> Sell if price drops X% from entry (e.g., -10%)<br>• <strong>Technical:</strong> Place stop below support level<br>• <strong>Volatility-based:</strong> Account for normal price swings</p><div class="info-box warn"><div class="info-box-label">Critical Rule</div><p>Set your stop loss BEFORE entering a trade. Decide your exit strategy when you're rational, not when you're watching your portfolio bleed.</p></div><div class="info-box tip"><div class="info-box-label">Pro Tip</div><p>On volatile assets like meme coins, tight stops get triggered constantly. Either use wider stops or accept you'll get stopped out frequently.</p></div>`, quiz: { q: 'When should you decide your stop loss?', opts: ['When price starts dropping', 'After buying, when rational', 'Stop losses are unnecessary', 'When your friend tells you'], ans: 1 }},
-        { title: 'Take Profit Strategy', content: `<p>Knowing when to sell winners is as important as cutting losers. <strong>Take profit orders</strong> automatically sell when price reaches your target.</p><h3>Scaling Out</h3><p>Rather than selling everything at once, consider scaling:<br>• At 2x: Sell 50% (recovers initial investment)<br>• At 5x: Sell 25% more (locks significant profit)<br>• Let remaining 25% ride (captures further upside)</p><div class="info-box tip"><div class="info-box-label">Psychology</div><p>Pre-set take profit levels remove emotion. "I'll sell when I feel like it" usually means selling too early or too late.</p></div><p>Nobody ever went broke taking profits. The "I'll wait for more" mentality has destroyed more gains than any rug pull.</p>`, quiz: { q: 'What is the main benefit of scaling out of positions?', opts: ['Maximum profit always', 'Locks in profit while keeping upside exposure', 'Looks professional', 'Lower fees'], ans: 1 }},
-        { title: 'Position Sizing', content: `<p><strong>Position sizing</strong>—how much of your portfolio goes into one trade—is the most important risk management tool.</p><h3>The 1% Rule</h3><p>Never risk more than 1-2% of your portfolio on a single high-risk trade. With $1000, that means $10-20 per meme coin.</p><div class="info-box good"><div class="info-box-label">Why This Works</div><p>• You can be wrong 50 times before losing half your portfolio<br>• One 10x winner covers nine complete losses<br>• Emotions stay manageable—no single trade feels catastrophic<br>• You stay in the game long enough to actually learn</p></div><div class="info-box warn"><div class="info-box-label">What Beginners Do</div><p>Put 50% into a "sure thing" → It dumps 80% → Need 250% just to break even → Emotions take over → Account blown in weeks</p></div>`, quiz: { q: 'With $1000 and a 1% rule, how much per meme coin?', opts: ['$100', '$50', '$10', '$250'], ans: 2 }}
-    ]},
-    { title: 'Scam Detection', sub: 'Identifying rug pulls before they happen', lessons: [
-        { title: 'Anatomy of a Rug Pull', content: `<p>A <strong>rug pull</strong> is when developers abandon a project and steal investor funds. It's the most common crypto scam.</p><h3>How It Works</h3><p>1. Developer creates token with exciting branding<br>2. Adds liquidity so people can buy<br>3. Hype builds, price rises<br>4. Developer removes liquidity or dumps holdings<br>5. Price crashes to zero, developer disappears</p><div class="info-box warn"><div class="info-box-label">Rug Types</div><p><strong>Hard Rug:</strong> Liquidity removed instantly. Token becomes untradeable.<br><strong>Slow Rug:</strong> Developer gradually sells, crashing price over time.<br><strong>Honeypot:</strong> Contract allows buying but blocks selling.</p></div><p>Most rugs happen within 24-48 hours of launch. The longer a token survives with active trading, the lower the rug probability—though it can still fail for other reasons.</p>`, quiz: { q: 'What is a honeypot?', opts: ['A great investment', 'A token you can buy but cannot sell', 'A fake exchange', 'A phishing site'], ans: 1 }},
-        { title: 'Red Flags to Watch', content: `<h3>Immediate Red Flags</h3><p>• Anonymous team with no track record<br>• Liquidity is not locked<br>• Single wallet holds >10% of supply<br>• Contract not verified or ownership not renounced<br>• Unrealistic promises ("guaranteed 1000x")<br>• Telegram/Discord full of bot activity</p><h3>How to Check</h3><p>Use RugCheck.xyz, TokenSniffer, or DEXScreener. They scan for common scam patterns automatically.</p><div class="info-box tip"><div class="info-box-label">Key Checks</div><p>• Is liquidity locked? For how long?<br>• Can the developer mint unlimited tokens?<br>• Are there hidden sell restrictions?<br>• Is there a blacklist function?</p></div>`, quiz: { q: 'A new token has unlocked liquidity and one wallet holds 40%. What do you do?', opts: ['Buy quickly', 'Avoid it completely', 'Buy a small test amount', 'Wait for them to lock'], ans: 1 }},
-        { title: 'Social Engineering Scams', content: `<p>Not all scams are technical. Many target you directly through manipulation.</p><h3>Common Tactics</h3><p><strong>Fake Support:</strong> "I'm from Phantom support, I need your seed phrase"<br><strong>Impersonation:</strong> Accounts pretending to be influencers or founders<br><strong>Fake Airdrops:</strong> "Connect wallet to claim" = wallet drainer<br><strong>Romance Scams:</strong> Building trust over time before asking for crypto</p><div class="info-box warn"><div class="info-box-label">Golden Rules</div><p>• Legitimate support NEVER DMs first<br>• Nobody needs your seed phrase for any reason<br>• If someone DMs about an "opportunity," it's a scam<br>• Always verify through official channels, never DMs</p></div>`, quiz: { q: 'Someone claiming to be support DMs you. Correct response?', opts: ['Provide wallet address', 'Ask for verification', 'Ignore and block immediately', 'Send a test transaction'], ans: 2 }}
-    ]},
-    { title: 'Trading Psychology', sub: 'Mastering emotions and building discipline', lessons: [
-        { title: 'Why Most Traders Lose', content: `<p>90-95% of traders lose money. This isn't bad luck—it's predictable psychology working against you.</p><h3>The Traps</h3><p><strong>FOMO:</strong> Buying because something is pumping (usually at the top)<br><strong>Revenge Trading:</strong> Bigger bets to recover losses (usually makes it worse)<br><strong>Hopium:</strong> Holding losers because "it'll come back"<br><strong>Overconfidence:</strong> One win convinces you you've figured it out</p><div class="info-box warn"><div class="info-box-label">The Math of Losses</div><p>• Lose 50% → Need 100% gain to recover<br>• Lose 75% → Need 300% gain to recover<br>• Lose 90% → Need 900% gain to recover</p></div><p>Large losses are nearly impossible to recover from. Prevention beats any strategy.</p>`, quiz: { q: 'After losing 50%, what gain is needed to recover?', opts: ['50%', '75%', '100%', '150%'], ans: 2 }},
-        { title: 'Building Your Rules', content: `<p>Every successful trader operates with defined rules. They remove emotion and create consistency.</p><h3>Example Rule Set</h3><p>1. Never put more than 1% into any single token<br>2. Always take profits at 2x (sell half)<br>3. Never buy something found less than 1 hour ago<br>4. Complete due diligence checklist before every buy<br>5. No trading when tired, emotional, or intoxicated<br>6. Maximum weekly loss: 5% of portfolio</p><div class="info-box tip"><div class="info-box-label">Key Insight</div><p>Rules only work if you follow them. Write them down. Review before every session. If you break them, stop trading that day and analyze why.</p></div>`, quiz: { q: 'Why are pre-set profit rules valuable?', opts: ['Maximize every trade', 'Remove emotion from decisions', 'Impress other traders', 'Required by law'], ans: 1 }},
-        { title: 'The Long Game', content: `<p>If you've completed this curriculum, you know more than 95% of people who enter crypto.</p><div class="info-box good"><div class="info-box-label">Your Edge</div><p>You understand how blockchains work, wallet security, scam patterns, position sizing, and the psychological traps. This is real, practical knowledge.</p></div><h3>Keys to Survival</h3><p>• Start small. First months are tuition.<br>• Track everything. Know your actual P&L.<br>• Review trades. Learn from wins AND losses.<br>• Stay humble. One streak doesn't make you an expert.<br>• Keep learning. This space evolves constantly.</p><p>The goal isn't to get rich overnight. It's to still be here in a year—with more knowledge, better skills, and hopefully more capital than you started with.</p><p><strong>Play the long game.</strong></p>`, quiz: { q: 'What should be your primary goal as a new trader?', opts: ['100x first trade', 'Find the next meme coin', 'Survival—stay in the game to learn', 'Copy influencers'], ans: 2 }}
-    ]}
+var modules=[
+{title:‘Blockchain Basics’,sub:‘What crypto actually is and why it exists’,lessons:[
+{title:‘What Is a Blockchain?’,content:’<p>A blockchain is a shared database that nobody owns but everyone can verify.</p><div class="info-box tip"><div class="info-box-label">Key Concept</div><p><strong>Distributed:</strong> Thousands of computers hold copies.<br><strong>Immutable:</strong> Data cannot be changed.<br><strong>Transparent:</strong> Anyone can view transactions.</p></div>’,quiz:{q:‘What makes blockchain different from a normal database?’,opts:[‘It is faster’,‘A company controls it’,‘It is distributed, immutable, and transparent’,‘It stores data in cloud’],ans:2}},
+{title:‘Why Cryptocurrency Exists’,content:’<p>Every time you send money digitally, you trust a middleman. In 2008, Satoshi Nakamoto created Bitcoin to remove that need.</p>’,quiz:{q:‘What problem was Bitcoin designed to solve?’,opts:[‘Making transactions faster’,‘Removing middlemen’,‘Creating digital art’,‘Replacing stock market’],ans:1}},
+{title:‘Bitcoin vs Ethereum vs Solana’,content:’<p><strong>Bitcoin:</strong> Digital gold. <strong>Ethereum:</strong> Programmable money. <strong>Solana:</strong> Fast and cheap for meme coins.</p>’,quiz:{q:‘Why do meme coin traders prefer Solana?’,opts:[‘Better security’,‘Government backing’,‘Very low fees’,‘Guaranteed returns’],ans:2}},
+{title:‘CEX vs DEX’,content:’<p><strong>CEX:</strong> Company holds your crypto (risky). <strong>DEX:</strong> You keep control (requires knowledge).</p>’,quiz:{q:‘Main risk of centralized exchanges?’,opts:[‘Higher fees’,‘Slower transactions’,‘They control your funds’,‘Limited selection’],ans:2}}
+]},
+{title:‘Wallet Security’,sub:‘Protecting your assets from theft’,lessons:[
+{title:‘What Is a Crypto Wallet?’,content:’<p>A wallet holds your private key that proves ownership. Address = email (public). Private key = password (never share).</p>’,quiz:{q:‘What does a wallet store?’,opts:[‘Your coins’,‘The private key’,‘Blockchain copy’,‘Transaction history’],ans:1}},
+{title:‘Seed Phrases’,content:’<p>12-24 words that regenerate your wallet. Anyone with it has full control. Never screenshot or share it.</p>’,quiz:{q:‘Someone claiming to be support asks for your seed phrase. What do you do?’,opts:[‘Provide it’,‘Give half’,‘Ignore and block - scam’,‘Verify first’],ans:2}},
+{title:‘Security Practices’,content:’<p>Use multiple wallets: hot for trading, cold for storage, burner for sketchy sites.</p>’,quiz:{q:‘Random NFT appears in your wallet. What to do?’,opts:[‘Sell it’,‘Click the link’,‘Leave it alone’,‘Transfer to main wallet’],ans:2}}
+]},
+{title:‘Moving Money’,sub:‘Transactions and gas fees’,lessons:[
+{title:‘On-Ramps’,content:’<p>Use exchanges or services like MoonPay. Always triple-check addresses - wrong address = lost forever.</p>’,quiz:{q:‘Most important before sending crypto?’,opts:[‘Current price’,‘Address is correct’,‘Time of day’,‘Market trend’],ans:1}},
+{title:‘Gas Fees’,content:’<p>Transaction fees. Ethereum: expensive. Solana: fractions of a cent.</p>’,quiz:{q:‘Why is Solana popular for meme coins?’,opts:[‘Better tech’,‘Much lower fees’,‘Government approved’,‘Older blockchain’],ans:1}},
+{title:‘Block Explorers’,content:’<p>Use Solscan or Etherscan to verify tokens. Check creation date, holders, and liquidity.</p>’,quiz:{q:‘What to check on explorer before buying?’,opts:[‘Twitter followers’,‘Creation date and holders’,‘Price chart’,‘Celebrity endorsements’],ans:1}}
+]},
+{title:‘How DEXs Work’,sub:‘Liquidity pools and swaps’,lessons:[
+{title:‘Liquidity Pools’,content:’<p>DEXs use pools of paired tokens. Price determined by ratio in pool.</p>’,quiz:{q:‘What determines DEX price?’,opts:[‘The DEX company’,‘Token ratio in pool’,‘Seller requests’,‘Coinbase price’],ans:1}},
+{title:‘Slippage’,content:’<p>Difference between expected and actual price. High slippage needed = red flag.</p>’,quiz:{q:‘Token needs 15% slippage. What does this mean?’,opts:[‘Great opportunity’,‘Low liquidity - caution’,‘Normal’,‘Very popular’],ans:1}},
+{title:‘Liquidity Trap’,content:’<p>Paper gains dont matter if selling crashes the price. Check liquidity before buying.</p>’,quiz:{q:‘Why might you not realize paper gains?’,opts:[‘Blockchain prevents selling’,‘Selling crashes price’,‘Paper gains are fake’,‘Need dev permission’],ans:1}}
+]},
+{title:‘Chart Analysis’,sub:‘Reading price action’,lessons:[
+{title:‘Candlesticks’,content:’<p>Green = closed higher. Red = closed lower. Body shows open-close, wicks show highs-lows.</p>’,quiz:{q:‘Green candlestick indicates:’,opts:[‘Price went down’,‘Closed higher than opened’,‘High volume’,‘Strong selling’],ans:1}},
+{title:‘Support and Resistance’,content:’<p>Support = floor where buying stops decline. Resistance = ceiling where selling stops advances.</p>’,quiz:{q:‘When support breaks, what often happens?’,opts:[‘Price recovers’,‘It becomes resistance’,‘Nothing changes’,‘Trading stops’],ans:1}},
+{title:‘Volume Analysis’,content:’<p>High volume confirms moves. Low volume breakouts often fail.</p>’,quiz:{q:‘Price breaks resistance on low volume. This suggests:’,opts:[‘Strong breakout’,‘Potential false breakout’,‘Buy immediately’,‘Volume doesnt matter’],ans:1}}
+]},
+{title:‘Risk Management’,sub:‘Stop losses and position sizing’,lessons:[
+{title:‘Stop Losses’,content:’<p>Auto-sell when price drops to limit. Set BEFORE entering trades.</p>’,quiz:{q:‘When decide stop loss?’,opts:[‘When price drops’,‘After buying, when rational’,‘Unnecessary’,‘When friend tells you’],ans:1}},
+{title:‘Take Profit’,content:’<p>Scale out: sell 50% at 2x, 25% more at 5x, let rest ride.</p>’,quiz:{q:‘Main benefit of scaling out?’,opts:[‘Maximum profit’,‘Locks profit while keeping upside’,‘Looks professional’,‘Lower fees’],ans:1}},
+{title:‘Position Sizing’,content:’<p>Never risk more than 1-2% per trade. $1000 portfolio = $10-20 per meme coin.</p>’,quiz:{q:‘With $1000 and 1% rule, how much per meme coin?’,opts:[’$100’,’$50’,’$10’,’$250’],ans:2}}
+]},
+{title:‘Scam Detection’,sub:‘Identifying rug pulls’,lessons:[
+{title:‘Anatomy of a Rug’,content:’<p>Dev creates token, adds liquidity, hypes it, then removes liquidity or dumps.</p>’,quiz:{q:‘What is a honeypot?’,opts:[‘Great investment’,‘Token you can buy but not sell’,‘Fake exchange’,‘Phishing site’],ans:1}},
+{title:‘Red Flags’,content:’<p>Anonymous team, unlocked liquidity, single wallet holds too much supply, bot-filled socials.</p>’,quiz:{q:‘Token has unlocked liquidity and one wallet holds 40%. What do you do?’,opts:[‘Buy quickly’,‘Avoid completely’,‘Small test amount’,‘Wait for lock’],ans:1}},
+{title:‘Social Engineering’,content:’<p>Fake support DMs, impersonation, fake airdrops. Legit support NEVER DMs first.</p>’,quiz:{q:‘Someone claiming to be support DMs you. Response?’,opts:[‘Give wallet address’,‘Ask verification’,‘Ignore and block’,‘Send test transaction’],ans:2}}
+]},
+{title:‘Trading Psychology’,sub:‘Mastering emotions’,lessons:[
+{title:‘Why Most Lose’,content:’<p>FOMO, revenge trading, hopium, overconfidence. Lose 50% = need 100% to recover.</p>’,quiz:{q:‘After losing 50%, what gain needed to recover?’,opts:[‘50%’,‘75%’,‘100%’,‘150%’],ans:2}},
+{title:‘Building Rules’,content:’<p>1% max per token, take profits at 2x, no emotional trading, weekly loss limit.</p>’,quiz:{q:‘Why are pre-set profit rules valuable?’,opts:[‘Maximize every trade’,‘Remove emotion’,‘Impress traders’,‘Required by law’],ans:1}},
+{title:‘The Long Game’,content:’<p>Start small, track everything, review trades, stay humble. Goal: still here in a year.</p>’,quiz:{q:‘Primary goal as new trader?’,opts:[‘100x first trade’,‘Next meme coin’,‘Survival - stay in game’,‘Copy influencers’],ans:2}}
+]}
 ];
 
-// NAV
-function nav(p) {
-    document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
-    document.getElementById('page-' + p).classList.add('active');
-    document.querySelectorAll('.nav-link').forEach(l => {
-        l.classList.remove('active');
-        if (l.dataset.p === p) l.classList.add('active');
-    });
-    window.scrollTo(0, 0);
-    if (p === 'simulator') initSimulator();
-    if (p === 'learn') buildModuleList();
+function nav(p){
+document.querySelectorAll(’.page’).forEach(function(x){x.classList.remove(‘active’)});
+document.getElementById(‘page-’+p).classList.add(‘active’);
+document.querySelectorAll(’.nav-link’).forEach(function(l){l.classList.remove(‘active’);if(l.dataset.p===p)l.classList.add(‘active’)});
+window.scrollTo(0,0);
+if(p===‘simulator’)initSimulator();
+if(p===‘learn’)buildModuleList();
 }
 
-// MODULES
-function buildModuleList() {
-    const el = document.getElementById('moduleList');
-    el.innerHTML = modules.map((m, i) => `
-        <div class="module-card" onclick="startModule(${i})">
-            <div class="module-num">0${i + 1}</div>
-            <div class="module-info"><h3>${m.title}</h3><p>${m.sub}</p></div>
-            <div class="module-arrow">→</div>
-        </div>
-    `).join('');
+function buildModuleList(){
+var html=’’;
+for(var i=0;i<modules.length;i++){
+html+=’<div class="module-card" onclick="startModule('+i+')"><div class="module-num">0’+(i+1)+’</div><div class="module-info"><h3>’+modules[i].title+’</h3><p>’+modules[i].sub+’</p></div><div class="module-arrow">→</div></div>’;
+}
+document.getElementById(‘moduleList’).innerHTML=html;
 }
 
-function startModule(i) {
-    currentModule = i;
-    currentLesson = 0;
-    const m = modules[i];
-    document.getElementById('lessonModTitle').textContent = `Module ${i + 1}: ${m.title}`;
-    document.getElementById('lessonNav').innerHTML = m.lessons.map((l, j) => `
-        <li class="lesson-nav-item">
-            <div class="lesson-nav-link ${j === 0 ? 'active' : ''}" data-l="${j}" onclick="showLesson(${j})">
-                <span class="ln-num">${j + 1}</span>
-                <span class="ln-text">${l.title}</span>
-            </div>
-        </li>
-    `).join('');
-    showLesson(0);
-    nav('lesson');
+function startModule(i){
+currentModule=i;currentLesson=0;
+var m=modules[i];
+document.getElementById(‘lessonModTitle’).textContent=‘Module ‘+(i+1)+’: ‘+m.title;
+var html=’’;
+for(var j=0;j<m.lessons.length;j++){
+html+=’<li class="lesson-nav-item"><div class="lesson-nav-link'+(j===0?' active':'')+'" data-l="'+j+'" onclick="showLesson('+j+')"><span class="ln-num">’+(j+1)+’</span><span class="ln-text">’+m.lessons[j].title+’</span></div></li>’;
+}
+document.getElementById(‘lessonNav’).innerHTML=html;
+showLesson(0);nav(‘lesson’);
 }
 
-function showLesson(i) {
-    currentLesson = i;
-    const m = modules[currentModule];
-    const l = m.lessons[i];
-    document.querySelectorAll('.lesson-nav-link').forEach((el, j) => {
-        el.classList.remove('active');
-        if (j === i) el.classList.add('active');
-    });
-    document.getElementById('lessonMain').innerHTML = `
-        <div class="lesson-label">Lesson ${currentModule + 1}.${i + 1}</div>
-        <h1 class="lesson-title">${l.title}</h1>
-        <div class="lesson-body">${l.content}</div>
-        <div class="quiz-wrap">
-            <div class="quiz-head">Knowledge Check</div>
-            <div class="quiz-body">
-                <div class="quiz-q">${l.quiz.q}</div>
-                <div class="quiz-opts">${l.quiz.opts.map((o, j) => `
-                    <div class="quiz-opt" onclick="checkQuiz(${i},${j},${j === l.quiz.ans})">
-                        <span class="quiz-let">${String.fromCharCode(65 + j)}</span>
-                        <span class="quiz-txt">${o}</span>
-                    </div>
-                `).join('')}</div>
-                <div class="quiz-fb" id="qfb-${i}"></div>
-            </div>
-        </div>
-        <div class="lesson-foot">
-            <button class="lesson-btn prev" onclick="prevLesson()" ${i === 0 ? 'disabled' : ''}>← Previous</button>
-            <button class="lesson-btn next" onclick="nextLesson()">${i === m.lessons.length - 1 ? 'Complete Module →' : 'Next Lesson →'}</button>
-        </div>
-    `;
-    window.scrollTo(0, 0);
+function showLesson(i){
+currentLesson=i;
+var m=modules[currentModule],l=m.lessons[i];
+var links=document.querySelectorAll(’.lesson-nav-link’);
+for(var j=0;j<links.length;j++){links[j].classList.remove(‘active’);if(j===i)links[j].classList.add(‘active’)}
+var optsHtml=’’;
+for(var k=0;k<l.quiz.opts.length;k++){
+optsHtml+=’<div class="quiz-opt" onclick="checkQuiz('+i+','+k+','+(k===l.quiz.ans)+')"><span class="quiz-let">’+String.fromCharCode(65+k)+’</span><span class="quiz-txt">’+l.quiz.opts[k]+’</span></div>’;
+}
+document.getElementById(‘lessonMain’).innerHTML=’<div class="lesson-label">Lesson ‘+(currentModule+1)+’.’+(i+1)+’</div><h1 class="lesson-title">’+l.title+’</h1><div class="lesson-body">’+l.content+’</div><div class="quiz-wrap"><div class="quiz-head">Knowledge Check</div><div class="quiz-body"><div class="quiz-q">’+l.quiz.q+’</div><div class="quiz-opts">’+optsHtml+’</div><div class="quiz-fb" id="qfb"></div></div></div><div class="lesson-foot"><button class=“lesson-btn prev” onclick=“prevLesson()”’+(i===0?’ disabled’:’’)+’>Previous</button><button class="lesson-btn next" onclick="nextLesson()">’+(i===m.lessons.length-1?‘Complete Module’:‘Next Lesson’)+’</button></div>’;
+window.scrollTo(0,0);
 }
 
-function nextLesson() {
-    const m = modules[currentModule];
-    if (currentLesson < m.lessons.length - 1) {
-        showLesson(currentLesson + 1);
-    } else {
-        nav('learn');
-    }
+function nextLesson(){var m=modules[currentModule];if(currentLesson<m.lessons.length-1)showLesson(currentLesson+1);else nav(‘learn’)}
+function prevLesson(){if(currentLesson>0)showLesson(currentLesson-1)}
+
+function checkQuiz(li,oi,correct){
+var opts=document.querySelectorAll(’#lessonMain .quiz-opt’);
+for(var j=0;j<opts.length;j++){opts[j].classList.remove(‘sel’,‘yes’,‘no’)}
+opts[oi].classList.add(‘sel’);opts[oi].classList.add(correct?‘yes’:‘no’);
+var fb=document.getElementById(‘qfb’);
+fb.textContent=correct?‘Correct!’:‘Not quite. Try again.’;
+fb.className=’quiz-fb show ’+(correct?‘yes’:‘no’);
 }
 
-function prevLesson() {
-    if (currentLesson > 0) showLesson(currentLesson - 1);
+function initSimulator(){showTab(‘market’);updateWalletUI();document.getElementById(‘liveChart’).classList.remove(‘show’)}
+
+function showTab(tab){
+var tabs=document.querySelectorAll(’.trading-tab’);
+for(var i=0;i<tabs.length;i++){tabs[i].classList.remove(‘active’);if((tab===‘market’&&i===0)||(tab!==‘market’&&i===1))tabs[i].classList.add(‘active’)}
+var content=document.getElementById(‘tradingContent’);
+if(tab===‘market’){
+var html=’<p style="color:var(--text2);margin-bottom:1rem;font-size:0.9rem">Click any token to buy. Watch the chart. Experience the rug.</p><div class="token-grid">’;
+for(var i=0;i<tokens.length;i++){
+var t=tokens[i];
+var cardClass=‘token-card’;
+if(t.tags.indexOf(‘risk’)>=0)cardClass+=’ danger’;
+else if(t.tags.indexOf(‘new’)>=0)cardClass+=’ warning’;
+var tagsHtml=’’;
+for(var j=0;j<t.tags.length;j++){
+var tag=t.tags[j];
+tagsHtml+=’<span class="token-tag '+(tag==='new'?'new':tag==='risk'?'risk':'liq')+'">’+(tag===‘new’?‘NEW’:tag===‘risk’?‘HIGH RISK’:‘LP LOCKED’)+’</span>’;
+}
+html+=’<div class="'+cardClass+'" onclick="openTrade(\''+t.id+'\')"><div class="token-top"><div class="token-icon" style="background:'+t.color+'22">’+t.icon+’</div><div><div class="token-name">’+t.name+’</div><div class="token-ticker">$’+t.ticker+’</div></div></div><div class="token-price">$’+(t.price<0.0001?t.price.toExponential(2):t.price.toFixed(6))+’</div><div class="token-chg pos">+’+t.chg+’%</div><div class="token-tags">’+tagsHtml+’</div></div>’;
+}
+html+=’</div>’;
+content.innerHTML=html;
+}else{
+content.innerHTML=’<div style="max-width:600px"><h3 style="margin-bottom:1rem">Types of Rug Pulls</h3><div class="info-box warn" style="margin-bottom:1rem"><div class="info-box-label">Hard Rug</div><p>Liquidity removed instantly. Tokens worthless in seconds.</p></div><div class="info-box" style="border-left-color:var(--orange);margin-bottom:1rem"><div class="info-box-label" style="color:var(--orange)">Slow Rug</div><p>Developer sells gradually while claiming to work on project.</p></div><div class="info-box" style="border-left-color:#9b59b6"><div class="info-box-label" style="color:#9b59b6">Honeypot</div><p>You can buy but cant sell. Only dev can sell.</p></div></div>’;
+}
+}
+function openTrade(id){
+var t=null;
+for(var i=0;i<tokens.length;i++){if(tokens[i].id===id)t=tokens[i]}
+document.getElementById(‘modalTitle’).textContent=‘Buy ‘+t.ticker;
+document.getElementById(‘modalBody’).innerHTML=’<div class="trade-info"><div class="trade-info-icon" style="background:'+t.color+'22">’+t.icon+’</div><div><h4>’+t.name+’</h4><div class="trade-info-price">$’+(t.price<0.0001?t.price.toExponential(2):t.price.toFixed(6))+’ +’+t.chg+’%</div></div></div><div class="trade-warn"><span>Warning:</span><span>This token has characteristics commonly associated with scams.</span></div><div class="trade-input-wrap"><div class="trade-input-label"><span>Amount</span><span>Balance: $’+wallet.cash.toFixed(2)+’</span></div><div class="trade-input-box"><input type="number" class="trade-input" id="tradeAmt" value="50" min="1" max="'+wallet.cash+'" oninput="updateSummary(\''+id+'\')"><div class="trade-input-suffix">USD</div></div></div><div class="trade-presets"><button class="trade-preset" onclick="setAmt(25,\''+id+'\')">$25</button><button class="trade-preset" onclick="setAmt(50,\''+id+'\')">$50</button><button class="trade-preset" onclick="setAmt(100,\''+id+'\')">$100</button><button class="trade-preset" onclick="setAmt('+wallet.cash+',\''+id+'\')">MAX</button></div><div class="trade-summary" id="tradeSummary"></div><button class="trade-btn buy" onclick="executeBuy(\''+id+'\')">Buy ‘+t.ticker+’</button>’;
+updateSummary(id);
+document.getElementById(‘tradeModal’).classList.add(‘show’);
 }
 
-function checkQuiz(li, oi, correct) {
-    const opts = document.querySelectorAll(`#lessonMain .quiz-opt`);
-    const fb = document.getElementById('qfb-' + li);
-    opts.forEach(o => o.classList.remove('sel', 'yes', 'no'));
-    opts[oi].classList.add('sel', correct ? 'yes' : 'no');
-    fb.textContent = correct ? '✓ Correct!' : '✗ Not quite. Review and try again.';
-    fb.className = 'quiz-fb show ' + (correct ? 'yes' : 'no');
-    if (correct) {
-        document.querySelector(`.lesson-nav-link[data-l="${li}"]`)?.classList.add('done');
-    }
+function setAmt(a,id){document.getElementById(‘tradeAmt’).value=a;updateSummary(id)}
+
+function updateSummary(id){
+var t=null;for(var i=0;i<tokens.length;i++){if(tokens[i].id===id)t=tokens[i]}
+var amt=parseFloat(document.getElementById(‘tradeAmt’).value)||0;
+document.getElementById(‘tradeSummary’).innerHTML=’<div class="trade-row"><span class="trade-row-label">You pay</span><span class="trade-row-val">$’+amt.toFixed(2)+’</span></div><div class="trade-row"><span class="trade-row-label">You receive</span><span class="trade-row-val">’+Math.floor(amt/t.price).toLocaleString()+’ ‘+t.ticker+’</span></div><div class="trade-row"><span class="trade-row-label">Slippage</span><span class="trade-row-val">12%</span></div>’;
 }
 
-// SIMULATOR
-function initSimulator() {
-    showTab('market');
-    updateWalletUI();
+function executeBuy(id){
+var t=null;for(var i=0;i<tokens.length;i++){if(tokens[i].id===id)t=tokens[i]}
+var amt=parseFloat(document.getElementById(‘tradeAmt’).value)||0;
+if(amt<=0||amt>wallet.cash)return;
+wallet.cash-=amt;
+wallet.holdings[id]={amount:amt/t.price,cost:amt,token:t,entryPrice:t.price,currentPrice:t.price};
+closeModal();updateWalletUI();
+activeToken=t;priceMultiplier=1;priceHistory=[1];
+document.getElementById(‘liveChart’).classList.add(‘show’);
+document.getElementById(‘chartIcon’).textContent=t.icon;
+document.getElementById(‘chartIcon’).style.background=t.color+‘22’;
+document.getElementById(‘chartName’).textContent=t.ticker;
+document.getElementById(‘chartStatus’).textContent=‘Price action starting…’;
+startSim(id);
 }
 
-function showTab(tab) {
-    document.querySelectorAll('.trading-tab').forEach(t => t.classList.remove('active'));
-    event.target.classList.add('active');
-    const content = document.getElementById('tradingContent');
-    if (tab === 'market') {
-        content.innerHTML = `
-            <p style="color:var(--text2);margin-bottom:1rem;font-size:0.9rem">Click any token to buy. Watch what happens next. 💀</p>
-            <div class="token-grid">${tokens.map(t => `
-                <div class="token-card ${t.tags.includes('risk') ? 'danger' : t.tags.includes('new') ? 'warning' : ''}" onclick="openTrade('${t.id}')">
-                    <div class="token-top">
-                        <div class="token-icon" style="background:${t.color}22">${t.icon}</div>
-                        <div><div class="token-name">${t.name}</div><div class="token-ticker">$${t.ticker}</div></div>
-                    </div>
-                    <div class="token-price">$${t.price < 0.0001 ? t.price.toExponential(2) : t.price.toFixed(6)}</div>
-                    <div class="token-chg pos">+${t.chg}%</div>
-                    <div class="token-tags">${t.tags.map(tag => `<span class="token-tag ${tag === 'new' ? 'new' : tag === 'risk' ? 'risk' : 'liq'}">${tag === 'new' ? 'NEW' : tag === 'risk' ? 'HIGH RISK' : 'LP LOCKED'}</span>`).join('')}</div>
-                </div>
-            `).join('')}</div>
-        `;
-    } else {
-        content.innerHTML = `
-            <div style="max-width:600px">
-                <h3 style="margin-bottom:1rem">Types of Rug Pulls</h3>
-                <div class="info-box warn" style="margin-bottom:1rem">
-                    <div class="info-box-label">Hard Rug</div>
-                    <p>The developer removes all liquidity instantly. Your tokens become worthless and untradeable in seconds. Most common with brand-new tokens.</p>
-                </div>
-                <div class="info-box" style="border-left-color:var(--orange);margin-bottom:1rem">
-                    <div class="info-box-label" style="color:var(--orange)">Slow Rug</div>
-                    <p>Developer gradually sells their holdings over days or weeks. Price slowly bleeds while they claim to be "working on the project." By the time you realize, you've lost 80%+.</p>
-                </div>
-                <div class="info-box" style="border-left-color:#9b59b6">
-                    <div class="info-box-label" style="color:#9b59b6">Honeypot</div>
-                    <p>The contract lets you buy but blocks selling. You watch your "gains" grow while trapped. The developer is the only one who can sell.</p>
-                </div>
-                <p style="margin-top:1.5rem;color:var(--text2)">Try buying tokens in the Market tab to experience each type firsthand—with fake money.</p>
-            </div>
-        `;
-    }
+function startSim(id){
+var h=wallet.holdings[id];if(!h)return;
+var t=h.token;
+var totalTicks=Math.floor(t.rugDelay/150);
+var pumpEnd=Math.floor(totalTicks*0.35);
+var volatileEnd=Math.floor(totalTicks*0.75);
+var tick=0;
+if(chartInterval)clearInterval(chartInterval);
+chartInterval=setInterval(function(){
+tick++;
+if(tick<=pumpEnd){
+var up=0.015+Math.random()*0.025;
+var noise=(Math.random()-0.35)*0.015;
+priceMultiplier*=(1+up+noise);
+document.getElementById(‘chartStatus’).textContent=‘Pumping… +’+((priceMultiplier-1)*100).toFixed(1)+’%’;
+}else if(tick<=volatileEnd){
+var swing=(Math.random()-0.5)*0.06;
+priceMultiplier*=(1+swing);
+if(tick%4===0)priceMultiplier*=(1+(Math.random()-0.45)*0.08);
+document.getElementById(‘chartStatus’).textContent=‘Volatile… ‘+((priceMultiplier-1)*100).toFixed(1)+’%’;
+}else{
+var down=0.008+Math.random()*0.015;
+priceMultiplier*=(1-down);
+document.getElementById(‘chartStatus’).textContent=‘Weakening… ‘+((priceMultiplier-1)*100).toFixed(1)+’%’;
+}
+if(priceMultiplier<0.5)priceMultiplier=0.5;
+if(priceMultiplier>2.8)priceMultiplier=2.8;
+priceHistory.push(priceMultiplier);
+if(priceHistory.length>50)priceHistory.shift();
+h.currentPrice=t.price*priceMultiplier;
+updateWalletUI();updateChart();
+if(tick>=totalTicks){clearInterval(chartInterval);executeRug(id)}
+},150);
 }
 
-function openTrade(id) {
-    const t = tokens.find(x => x.id === id);
-    document.getElementById('modalTitle').textContent = `Buy ${t.ticker}`;
-    document.getElementById('modalBody').innerHTML = `
-        <div class="trade-info">
-            <div class="trade-info-icon" style="background:${t.color}22">${t.icon}</div>
-            <div><h4>${t.name}</h4><div class="trade-info-price">$${t.price < 0.0001 ? t.price.toExponential(2) : t.price.toFixed(6)} · +${t.chg}%</div></div>
-        </div>
-        <div class="trade-warn">
-            <span>⚠️</span>
-            <span>This token has characteristics commonly associated with scams. Proceed at your own risk.</span>
-        </div>
-        <div class="trade-input-wrap">
-            <div class="trade-input-label"><span>Amount</span><span>Balance: $${wallet.cash.toFixed(2)}</span></div>
-            <div class="trade-input-box">
-                <input type="number" class="trade-input" id="tradeAmt" value="50" min="1" max="${wallet.cash}" oninput="updateTradeSummary('${id}')">
-                <div class="trade-input-suffix">USD</div>
-            </div>
-        </div>
-        <div class="trade-presets">
-            <button class="trade-preset" onclick="setTradeAmt(25,'${id}')">$25</button>
-            <button class="trade-preset" onclick="setTradeAmt(50,'${id}')">$50</button>
-            <button class="trade-preset" onclick="setTradeAmt(100,'${id}')">$100</button>
-            <button class="trade-preset" onclick="setTradeAmt(${wallet.cash},'${id}')">MAX</button>
-        </div>
-        <div class="trade-summary" id="tradeSummary">
-            <div class="trade-row"><span class="trade-row-label">You pay</span><span class="trade-row-val">$50.00</span></div>
-            <div class="trade-row"><span class="trade-row-label">You receive</span><span class="trade-row-val">${(50 / t.price).toLocaleString()} ${t.ticker}</span></div>
-            <div class="trade-row"><span class="trade-row-label">Slippage</span><span class="trade-row-val">12%</span></div>
-        </div>
-        <button class="trade-btn buy" onclick="executeBuy('${id}')">Buy ${t.ticker}</button>
-    `;
-    document.getElementById('tradeModal').classList.add('show');
-}
-
-function setTradeAmt(amt, id) {
-    document.getElementById('tradeAmt').value = amt;
-    updateTradeSummary(id);
-}
-
-function updateTradeSummary(id) {
-    const t = tokens.find(x => x.id === id);
-    const amt = parseFloat(document.getElementById('tradeAmt').value) || 0;
-    document.getElementById('tradeSummary').innerHTML = `
-        <div class="trade-row"><span class="trade-row-label">You pay</span><span class="trade-row-val">$${amt.toFixed(2)}</span></div>
-        <div class="trade-row"><span class="trade-row-label">You receive</span><span class="trade-row-val">${(amt / t.price).toLocaleString()} ${t.ticker}</span></div>
-        <div class="trade-row"><span class="trade-row-label">Slippage</span><span class="trade-row-val">12%</span></div>
-    `;
-}
-
-function executeBuy(id) {
-    const t = tokens.find(x => x.id === id);
-    const amt = parseFloat(document.getElementById('tradeAmt').value) || 0;
-    if (amt <= 0 || amt > wallet.cash) return;
-    
-    wallet.cash -= amt;
-    const tokenAmt = amt / t.price;
-    wallet.holdings[id] = { amount: tokenAmt, cost: amt, token: t };
-    
-    closeModal();
-    updateWalletUI();
-    
-    // Simulate pump then rug
-    setTimeout(() => simulatePump(id), 1000);
-}
-
-function simulatePump(id) {
-    const h = wallet.holdings[id];
-    if (!h) return;
-    
-    // Pump phase
-    const pumpMultiplier = 1.5 + Math.random() * 0.5;
-    h.currentPrice = h.token.price * pumpMultiplier;
-    updateWalletUI();
-    
-    // Rug after delay
-    setTimeout(() => executeRug(id), h.token.rugDelay);
-}
-
-function executeRug(id) {
-    const h = wallet.holdings[id];
-    if (!h) return;
-    
-    const rugInfo = rugTypes[h.token.rug];
-    const lostAmt = h.cost * rugInfo.loss;
-    const remainAmt = h.cost - lostAmt;
-    
-    // Update holdings
-    h.currentPrice = h.token.price * (1 - rugInfo.loss);
-    h.rugged = true;
-    
-    // Show rug screen
-    document.getElementById('rugPrice').textContent = `-${Math.round(rugInfo.loss * 100)}%`;
-    document.getElementById('rugType').textContent = `${rugInfo.name}`;
-    document.getElementById('rugExplain').textContent = rugInfo.desc;
-    document.getElementById('rugInvested').textContent = `$${h.cost.toFixed(2)}`;
-    document.getElementById('rugLost').textContent = `$${lostAmt.toFixed(2)}`;
-    document.getElementById('rugRemain').textContent = `$${remainAmt.toFixed(2)}`;
-    document.getElementById('rugScreen').classList.add('show');
-    
-    updateWalletUI();
-}
-
-function closeRug() {
-    document.getElementById('rugScreen').classList.remove('show');
-}
-
-function closeModal() {
-    document.getElementById('tradeModal').classList.remove('show');
-}
-
-function updateWalletUI() {
-    let totalValue = wallet.cash;
-    let totalPnl = 0;
-    
-    const holdingsEl = document.getElementById('holdingsList');
-    let html = `
-        <div class="holding">
-            <div class="holding-left">
-                <div class="holding-icon" style="background:#1a1a2e">💵</div>
-                <div><div class="holding-name">USD</div><div class="holding-amt">Cash</div></div>
-            </div>
-            <div class="holding-right">
-                <div class="holding-val">$${wallet.cash.toFixed(2)}</div>
-            </div>
-        </div>
-    `;
-    
-    for (const [id, h] of Object.entries(wallet.holdings)) {
-        const currentPrice = h.currentPrice || h.token.price;
-        const value = h.amount * currentPrice;
-        const pnl = value - h.cost;
-        const pnlPct = (pnl / h.cost * 100);
-        
-        totalValue += value;
-        totalPnl += pnl;
-        
-        html += `
-            <div class="holding">
-                <div class="holding-left">
-                    <div class="holding-icon" style="background:${h.token.color}22">${h.token.icon}</div>
-                    <div><div class="holding-name">${h.token.ticker}</div><div class="holding-amt">${h.amount.toLocaleString()}</div></div>
-                </div>
-                <div class="holding-right">
-                    <div class="holding-val">$${value.toFixed(2)}</div>
-                    <div class="holding-chg ${pnl >= 0 ? 'pos' : 'neg'}">${pnl >= 0 ? '+' : ''}${pnlPct.toFixed(1)}%</div>
-                </div>
-            </div>
-        `;
-    }
-    
-    holdingsEl.innerHTML = html;
-    document.getElementById('totalValue').textContent = `$${totalValue.toFixed(2)}`;
-    
-    const pnlPct = ((totalValue - wallet.startValue) / wallet.startValue * 100);
-    const pnlEl = document.getElementById('totalPnl');
-    pnlEl.textContent = `${totalPnl >= 0 ? '+' : ''}$${totalPnl.toFixed(2)} (${pnlPct >= 0 ? '+' : ''}${pnlPct.toFixed(1)}%)`;
-    pnlEl.className = 'balance-pnl ' + (totalPnl >= 0 ? 'pos' : 'neg');
-}
-
-function resetWallet() {
-    wallet = { cash: 500, holdings: {}, startValue: 500 };
-    updateWalletUI();
-}
-
-// Init
-document.addEventListener('DOMContentLoaded', () => {
-    buildModuleList();
-});
-</script>
-
-</body>
-</html>
-        // Check if time for rug
-        if (tickCount >= totalTicks) {
-            clearInterval(chartInterval);
-            executeRug(id);
-        }
-    }, 200);
-}
-
-function updateChart() {
-const canvas = document.getElementById(‘priceChart’);
-const ctx = canvas.getContext(‘2d’);
-const rect = canvas.parentElement.getBoundingClientRect();
-
-```
-canvas.width = rect.width * 2;
-canvas.height = rect.height * 2;
-ctx.scale(2, 2);
-
-const w = rect.width;
-const h = rect.height;
-
-ctx.fillStyle = '#08080a';
-ctx.fillRect(0, 0, w, h);
-
-ctx.strokeStyle = '#252530';
-ctx.lineWidth = 0.5;
-for (let i = 0; i < 5; i++) {
-    const y = (h / 5) * i;
-    ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(w, y);
-    ctx.stroke();
-}
-
-if (priceHistory.length < 2) return;
-
-const min = Math.min(...priceHistory) * 0.95;
-const max = Math.max(...priceHistory) * 1.05;
-const range = max - min || 1;
-
+function updateChart(){
+var canvas=document.getElementById(‘priceChart’);
+var ctx=canvas.getContext(‘2d’);
+var rect=canvas.parentElement.getBoundingClientRect();
+canvas.width=rect.width*2;canvas.height=rect.height*2;
+ctx.scale(2,2);
+var w=rect.width,h=rect.height;
+ctx.fillStyle=’#08080a’;ctx.fillRect(0,0,w,h);
+ctx.strokeStyle=’#252530’;ctx.lineWidth=0.5;
+for(var i=1;i<5;i++){ctx.beginPath();ctx.moveTo(0,h*i/5);ctx.lineTo(w,h*i/5);ctx.stroke()}
+if(priceHistory.length<2)return;
+var min=Math.min.apply(null,priceHistory)*0.95;
+var max=Math.max.apply(null,priceHistory)*1.05;
+var range=max-min;if(range===0)range=1;
 ctx.beginPath();
-ctx.strokeStyle = priceMultiplier >= 1 ? '#00d68f' : '#ff4757';
-ctx.lineWidth = 2;
-
-priceHistory.forEach((p, i) => {
-    const x = (i / (priceHistory.length - 1)) * w;
-    const y = h - ((p - min) / range) * h;
-    if (i === 0) ctx.moveTo(x, y);
-    else ctx.lineTo(x, y);
-});
+ctx.strokeStyle=priceMultiplier>=1?’#00d68f’:’#ff4757’;
+ctx.lineWidth=2.5;
+for(var i=0;i<priceHistory.length;i++){
+var x=(i/(priceHistory.length-1))*w;
+var y=h-((priceHistory[i]-min)/range)*h;
+if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+}
 ctx.stroke();
-
-ctx.lineTo(w, h);
-ctx.lineTo(0, h);
-ctx.closePath();
-ctx.fillStyle = priceMultiplier >= 1 ? 'rgba(0,214,143,0.1)' : 'rgba(255,71,87,0.1)';
+ctx.lineTo(w,h);ctx.lineTo(0,h);ctx.closePath();
+ctx.fillStyle=priceMultiplier>=1?‘rgba(0,214,143,0.15)’:‘rgba(255,71,87,0.15)’;
 ctx.fill();
-
-const currentPrice = activeToken.price * priceMultiplier;
-const priceEl = document.getElementById('chartPrice');
-priceEl.textContent = '$' + (currentPrice < 0.0001 ? currentPrice.toExponential(2) : currentPrice.toFixed(6));
-priceEl.className = 'chart-price ' + (priceMultiplier >= 1 ? 'up' : 'down');
-```
-
+var price=activeToken.price*priceMultiplier;
+var priceEl=document.getElementById(‘chartPrice’);
+priceEl.textContent=’$’+(price<0.0001?price.toExponential(2):price.toFixed(6));
+priceEl.className=’chart-price ’+(priceMultiplier>=1?‘up’:‘down’);
 }
 
-function executeRug(id) {
-const h = wallet.holdings[id];
-if (!h) return;
-
-```
-const rugInfo = rugTypes[h.token.rug];
-document.getElementById('chartStatus').textContent = '💀 RUG PULL DETECTED';
-
-let crashTicks = 0;
-const crashInterval = setInterval(() => {
-    crashTicks++;
-    priceMultiplier *= 0.7;
-    priceHistory.push(priceMultiplier);
-    if (priceHistory.length > 60) priceHistory.shift();
-    
-    h.currentPrice = h.token.price * priceMultiplier;
-    updateWalletUI();
-    updateChart();
-    
-    if (crashTicks >= 8) {
-        clearInterval(crashInterval);
-        
-        const lostAmt = h.cost * rugInfo.loss;
-        const remainAmt = h.cost - lostAmt;
-        
-        h.currentPrice = h.token.price * (1 - rugInfo.loss);
-        h.rugged = true;
-        
-        document.getElementById('rugPrice').textContent = `-${Math.round(rugInfo.loss * 100)}%`;
-        document.getElementById('rugType').textContent = rugInfo.name;
-        document.getElementById('rugExplain').textContent = rugInfo.desc;
-        document.getElementById('rugInvested').textContent = `$${h.cost.toFixed(2)}`;
-        document.getElementById('rugLost').textContent = `$${lostAmt.toFixed(2)}`;
-        document.getElementById('rugRemain').textContent = `$${remainAmt.toFixed(2)}`;
-        document.getElementById('rugScreen').classList.add('show');
-        
-        updateWalletUI();
-    }
-}, 100);
-```
-
+function executeRug(id){
+var h=wallet.holdings[id];if(!h)return;
+var rugInfo=rugTypes[h.token.rug];
+document.getElementById(‘chartStatus’).textContent=‘RUG PULL DETECTED’;
+var crash=0;
+var crashInt=setInterval(function(){
+crash++;
+priceMultiplier*=0.65;
+priceHistory.push(priceMultiplier);
+if(priceHistory.length>50)priceHistory.shift();
+h.currentPrice=h.token.price*priceMultiplier;
+updateWalletUI();updateChart();
+if(crash>=10){
+clearInterval(crashInt);
+var lost=h.cost*rugInfo.loss;
+var remain=h.cost-lost;
+h.currentPrice=h.token.price*(1-rugInfo.loss);
+h.rugged=true;
+document.getElementById(‘rugPrice’).textContent=’-’+Math.round(rugInfo.loss*100)+’%’;
+document.getElementById(‘rugType’).textContent=rugInfo.name;
+document.getElementById(‘rugExplain’).textContent=rugInfo.desc;
+document.getElementById(‘rugInvested’).textContent=’$’+h.cost.toFixed(2);
+document.getElementById(‘rugLost’).textContent=’$’+lost.toFixed(2);
+document.getElementById(‘rugRemain’).textContent=’$’+remain.toFixed(2);
+document.getElementById(‘rugScreen’).classList.add(‘show’);
+updateWalletUI();
+}
+},80);
 }
 
-function closeRug() {
-document.getElementById(‘rugScreen’).classList.remove(‘show’);
+function closeRug(){document.getElementById(‘rugScreen’).classList.remove(‘show’);document.getElementById(‘liveChart’).classList.remove(‘show’);activeToken=null;priceHistory=[]}
+function closeModal(){document.getElementById(‘tradeModal’).classList.remove(‘show’)}
+
+function updateWalletUI(){
+var total=wallet.cash,pnl=0;
+var html=’<div class="holding"><div class="holding-left"><div class="holding-icon" style="background:#1a1a2e">💵</div><div><div class="holding-name">USD</div><div class="holding-amt">Cash</div></div></div><div class="holding-right"><div class="holding-val">$’+wallet.cash.toFixed(2)+’</div></div></div>’;
+for(var id in wallet.holdings){
+var h=wallet.holdings[id];
+var price=h.currentPrice||h.token.price;
+var val=h.amount*price;
+var p=val-h.cost;
+var pct=p/h.cost*100;
+total+=val;pnl+=p;
+html+=’<div class="holding"><div class="holding-left"><div class="holding-icon" style="background:'+h.token.color+'22">’+h.token.icon+’</div><div><div class="holding-name">’+h.token.ticker+’</div><div class="holding-amt">’+Math.floor(h.amount).toLocaleString()+’</div></div></div><div class="holding-right"><div class="holding-val">$’+val.toFixed(2)+’</div><div class="holding-chg '+(p>=0?'pos':'neg')+'">’+(p>=0?’+’:’’)+pct.toFixed(1)+’%</div></div></div>’;
+}
+document.getElementById(‘holdingsList’).innerHTML=html;
+document.getElementById(‘totalValue’).textContent=’$’+total.toFixed(2);
+var tpct=(total-wallet.startValue)/wallet.startValue*100;
+var pnlEl=document.getElementById(‘totalPnl’);
+pnlEl.textContent=(pnl>=0?’+’:’’)+’ $’+pnl.toFixed(2)+’ (’+(tpct>=0?’+’:’’)+tpct.toFixed(1)+’%)’;
+pnlEl.className=’balance-pnl ’+(pnl>=0?‘pos’:‘neg’);
+}
+
+function resetWallet(){
+if(chartInterval)clearInterval(chartInterval);
+wallet={cash:500,holdings:{},startValue:500};
 document.getElementById(‘liveChart’).classList.remove(‘show’);
-activeToken = null;
-priceHistory = [];
-}
-
-function closeModal() {
-document.getElementById(‘tradeModal’).classList.remove(‘show’);
-}
-
-function updateWalletUI() {
-let totalValue = wallet.cash;
-let totalPnl = 0;
-
-```
-const holdingsEl = document.getElementById('holdingsList');
-let html = `
-    <div class="holding">
-        <div class="holding-left">
-            <div class="holding-icon" style="background:#1a1a2e">💵</div>
-            <div><div class="holding-name">USD</div><div class="holding-amt">Cash</div></div>
-        </div>
-        <div class="holding-right">
-            <div class="holding-val">${'$'}${wallet.cash.toFixed(2)}</div>
-        </div>
-    </div>
-`;
-
-for (const [id, h] of Object.entries(wallet.holdings)) {
-    const currentPrice = h.currentPrice || h.token.price;
-    const value = h.amount * currentPrice;
-    const pnl = value - h.cost;
-    const pnlPct = (pnl / h.cost * 100);
-    
-    totalValue += value;
-    totalPnl += pnl;
-    
-    html += `
-        <div class="holding">
-            <div class="holding-left">
-                <div class="holding-icon" style="background:${h.token.color}22">${h.token.icon}</div>
-                <div><div class="holding-name">${h.token.ticker}</div><div class="holding-amt">${h.amount.toLocaleString()}</div></div>
-            </div>
-            <div class="holding-right">
-                <div class="holding-val">${'$'}${value.toFixed(2)}</div>
-                <div class="holding-chg ${pnl >= 0 ? 'pos' : 'neg'}">${pnl >= 0 ? '+' : ''}${pnlPct.toFixed(1)}%</div>
-            </div>
-        </div>
-    `;
-}
-
-holdingsEl.innerHTML = html;
-document.getElementById('totalValue').textContent = '$' + totalValue.toFixed(2);
-
-const pnlPct = ((totalValue - wallet.startValue) / wallet.startValue * 100);
-const pnlEl = document.getElementById('totalPnl');
-pnlEl.textContent = (totalPnl >= 0 ? '+' : '') + '$' + totalPnl.toFixed(2) + ' (' + (pnlPct >= 0 ? '+' : '') + pnlPct.toFixed(1) + '%)';
-pnlEl.className = 'balance-pnl ' + (totalPnl >= 0 ? 'pos' : 'neg');
-```
-
-}
-
-function resetWallet() {
-if (chartInterval) clearInterval(chartInterval);
-wallet = { cash: 500, holdings: {}, startValue: 500 };
-document.getElementById(‘liveChart’).classList.remove(‘show’);
-activeToken = null;
-priceHistory = [];
+activeToken=null;priceHistory=[];
 updateWalletUI();
 }
 
-document.addEventListener(‘DOMContentLoaded’, () => {
-buildModuleList();
-});
+document.addEventListener(‘DOMContentLoaded’,function(){buildModuleList();updateWalletUI()});
 </script>
 
 </body>
